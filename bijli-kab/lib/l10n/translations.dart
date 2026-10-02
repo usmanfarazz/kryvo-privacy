@@ -1,11 +1,10 @@
 /// Translations for every UI string, keyed by the English text.
-/// Generated from translations.tsv-style tables; edit freely.
 const Map<String, Map<String, String>> kTranslations = {
   'rur': {
-    '1h': '1 ghanta',
-    '1h {1}m': '1 ghanta {1} min',
     'just now': 'abhi abhi',
     '{0}m': '{0} min',
+    '1h': '1 ghanta',
+    '1h {1}m': '1 ghanta {1} min',
     '{0}h': '{0} ghante',
     '{0}h {1}m': '{0} ghante {1} min',
     '{0}d': '{0} din',
@@ -24,6 +23,8 @@ const Map<String, Map<String, String>> kTranslations = {
     'Transformer fault': 'Transformer kharab',
     'Scheduled loadshedding': 'Schedule wali loadshedding',
     'Wire / cable fault': 'Taar / cable kharab',
+    'Challenge complete!': 'Challenge poora!',
+    'points': 'points',
     'Know before the light goes': 'Light jane se pehle jaanein',
     'Forecasts are estimates from community reports, not official information.':
         'Forecast logon ki reports ka andaza hai, official maloomat nahi.',
@@ -33,7 +34,8 @@ const Map<String, Map<String, String>> kTranslations = {
     'Send feedback': 'Feedback bhejein',
     'Rate on Play Store': 'Play Store par rating dein',
     'Share with friends': 'Doston ko bhejein',
-    'Drag the map so the pin is on your home. The box is your area (~1 km).': 'Map ko khiskayein taake pin aap ke ghar par ho. Dabba aap ka ilaqa hai (~1 km).',
+    'Drag the map so the pin is on your home. The box is your area (~1 km).':
+        'Map ko khiskayein taake pin aap ke ghar par ho. Dabba aap ka ilaqa hai (~1 km).',
     'Finding the area name…': 'Ilaqe ka naam dhoond rahe hain…',
     'Finding your location…': 'Aap ki location dhoond rahe hain…',
     'Name (e.g. Ghar, Office, Ammi ka ghar)':
@@ -41,7 +43,8 @@ const Map<String, Map<String, String>> kTranslations = {
     'Save this area': 'Ye ilaqa save karein',
     'Choose your area': 'Apna ilaqa chunein',
     'Add area': 'Ilaqa add karein',
-    'Follow your home, office, school or family. The first area (★) gets alerts and the home-screen widget.': 'Ghar, office, school ya family ko follow karein. Pehle ilaqe (★) ke alerts aur home-screen widget aate hain.',
+    'Follow your home, office, school or family. The first area (★) gets alerts and the home-screen widget.':
+        'Ghar, office, school ya family ko follow karein. Pehle ilaqe (★) ke alerts aur home-screen widget aate hain.',
     'You need at least one area.': 'Kam az kam ek ilaqa zaroori hai.',
     'Make main area (★)': 'Main ilaqa banayein (★)',
     'Rename': 'Naam badlein',
@@ -61,6 +64,14 @@ const Map<String, Map<String, String>> kTranslations = {
     '{0} points': '{0} points',
     'Badges': 'Badges',
     'Levels': 'Levels',
+    '{0} of {1} done this week': 'Is hafte {1} mein se {0} poore',
+    'New challenges in {0} days {1} hours':
+        'Naye challenges {0} din {1} ghante mein',
+    'Completed so far: {0}': 'Ab tak poore: {0}',
+    'Challenges are the same for everyone and change every Monday. Rewards are added automatically.':
+        'Challenges sab ke liye ek jaise hain aur har Pir ko badalte hain. Inaam khud mil jata hai.',
+    'Reward: +{0} points': 'Inaam: +{0} points',
+    'Weekly challenges': 'Hafte ke challenges',
     'Untick all': 'Sab untick karein',
     'All set! Let it go 😎': 'Sab tayyar! Ab jaye to jaye 😎',
     'Get ready for the cut': 'Light jane ki tayyari karein',
@@ -70,6 +81,29 @@ const Map<String, Map<String, String>> kTranslations = {
     'Add your own item…': 'Apni cheez likhein…',
     'Before the light goes': 'Light jane se pehle',
     'Checklist': 'Checklist',
+    'since {0}': '{0} se',
+    'No electricity in our area.': 'Hamare ilaqe mein bijli nahi hai.',
+    'Area': 'Ilaqa',
+    'Reference no.': 'Reference no.',
+    'Could not open the phone app.': 'Phone ki app nahi khuli.',
+    'Light gone for too long? Complain in one tap.':
+        'Light bohat der se gayi hai? Ek tap mein shikayat karein.',
+    'Call {0}': '{0} par call',
+    'SMS': 'SMS',
+    'Helpline number (from your bill)': 'Helpline number (bill se)',
+    'Reference / consumer number (optional)':
+        'Reference / consumer number (zaroori nahi)',
+    'Add': 'Add',
+    'Got a complaint number from the helpline? Save it here so you can follow up.':
+        'Helpline se complaint number mila? Yahan save karein taake baad mein pooch sakein.',
+    'Complaint': 'Shikayat',
+    'Check the helpline number printed on your electricity bill — it can differ by company.':
+        'Apne bijli ke bill par likha helpline number check kar lein — har company ka alag ho sakta hai.',
+    'Save complaint': 'Shikayat save karein',
+    'Complaint number': 'Shikayat number',
+    'Note (optional)': 'Note (zaroori nahi)',
+    'Helpline': 'Helpline',
+    'My complaints': 'Meri shikayaat',
     'Forecast': 'Forecast',
     'Learning your area…': 'Aap ka ilaqa seekh rahe hain…',
     'No cut expected in 24h 🎉': '24 ghante mein light jane ka imkaan nahi 🎉',
@@ -77,13 +111,14 @@ const Map<String, Map<String, String>> kTranslations = {
     'Based on {0} days of neighbour reports':
         'Pariosiyon ki {0} din ki reports par',
     'official schedule': 'official schedule',
-    'Forecasts start after ~2 days of reports. Keep tapping Light Gayi / Light Aayi — or add the official schedule below.': 'Forecast ~2 din ki reports ke baad shuru hota hai. Light Gayi / Light Aayi dabate rahein — ya neeche official schedule daalein.',
+    'Forecasts start after ~2 days of reports. Keep tapping Light Gayi / Light Aayi — or add the official schedule below.':
+        'Forecast ~2 din ki reports ke baad shuru hota hai. Light Gayi / Light Aayi dabate rahein — ya neeche official schedule daalein.',
     'Nothing expected. Enjoy the light! (We will warn you if that changes.)':
         'Kuch expected nahi. Light ke maze lein! (Badla to hum bata denge.)',
     'Darker red = more likely. Learned from the last 4 weeks.':
         'Gehra laal = zyada imkaan. Pichle 4 hafton se seekha.',
-    'Add': 'Add',
-    'Got a loadshedding schedule from your electricity company? Add it here and it will be used in the forecast and alerts.': 'Bijli company ka loadshedding schedule mila hai? Yahan daalein, forecast aur alerts mein use hoga.',
+    'Got a loadshedding schedule from your electricity company? Add it here and it will be used in the forecast and alerts.':
+        'Bijli company ka loadshedding schedule mila hai? Yahan daalein, forecast aur alerts mein use hoga.',
     'Before-the-cut checklist': 'Light jane se pehle ki checklist',
     'Get a reminder 30 min before the next cut':
         'Agli dafa light jane se 30 min pehle yaad dahani',
@@ -131,6 +166,27 @@ const Map<String, Map<String, String>> kTranslations = {
     '{0} chance · learned from your area':
         '{0} imkaan · aap ke ilaqe se seekha',
     'Coming up': 'Aage kya hai',
+    'More neighbours = more accurate light status':
+        'Zyada pariosi = zyada sahi light ka haal',
+    'Invite your street and family. They can follow your area with your code.':
+        'Gali walon aur family ko bulayein. Wo aap ke code se aap ka ilaqa follow kar sakte hain.',
+    'Your area code': 'Aap ke ilaqe ka code',
+    'Code copied': 'Code copy ho gaya',
+    'Invite on WhatsApp & more': 'WhatsApp waghera par bulayein',
+    'Invites sent: {0}': 'Bheje gaye invite: {0}',
+    'Follow your friend\'s or family\'s area.':
+        'Dost ya family ka ilaqa follow karein.',
+    'Follow their area — and get +20 welcome points the first time!':
+        'Unka ilaqa follow karein — aur pehli baar +20 welcome points payein!',
+    '6-letter code': '6 harf ka code',
+    'Area added to your list 🤝': 'Ilaqa aap ki list mein add ho gaya 🤝',
+    'You already follow this area.': 'Aap ye ilaqa pehle se follow karte hain.',
+    'That code doesn\'t look right. It has 6 letters/numbers.':
+        'Ye code sahi nahi lag raha. Is mein 6 harf/number hote hain.',
+    'The code only shows the ~1 km area, never your exact home.':
+        'Code sirf ~1 km ilaqa batata hai, aap ka asal ghar kabhi nahi.',
+    'Invite friends': 'Doston ko bulayein',
+    'Got a code from a friend?': 'Dost se code mila?',
     'Everyone': 'Sab log',
     'My city': 'Mera shehar',
     'Could not load the leaderboard. Check your internet.':
@@ -140,6 +196,17 @@ const Map<String, Map<String, String>> kTranslations = {
     'You': 'Aap',
     '{0} reports': '{0} reports',
     'Leaderboard': 'Leaderboard',
+    'Unlock Bijli Kab?': 'Bijli Kab? kholein',
+    'Wrong PIN, try again': 'Ghalat PIN, dobara koshish karein',
+    'Enter your PIN': 'Apna PIN daalein',
+    'App Lock is on 🔒': 'App Lock on ho gaya 🔒',
+    'PINs did not match. Start again.':
+        'PIN match nahi hue. Dobara shuru karein.',
+    'Choose a 4-digit PIN': '4 number ka PIN chunein',
+    'Enter the same PIN again': 'Wohi PIN dobara daalein',
+    'You can turn this off any time in Settings.':
+        'Ise Settings se kabhi bhi band kar sakte hain.',
+    'App Lock': 'App Lock',
     'Could not load the map. Check your internet.':
         'Map load nahi hua. Internet check karein.',
     'Live map': 'Live map',
@@ -160,14 +227,30 @@ const Map<String, Map<String, String>> kTranslations = {
     'first reports': 'pehli reports',
     'badges': 'badges',
     'Features': 'Features',
+    'until the tank is full': 'tanki bharne tak',
+    'to fill the tank': 'tanki bharne mein',
+    'Tank fills in {0} minutes': 'Tanki {0} min mein bharti hai',
+    'Start pump timer': 'Motor timer shuru karein',
+    'The light seems to be off in your main area — the pump may not run.':
+        'Lagta hai main ilaqe mein light nahi — motor shayad na chale.',
+    'Stop timer': 'Timer band karein',
+    'So you can fill the tank while there is power':
+        'Taake light hote hue tanki bhar lein',
+    'If the light goes while the timer runs, you get a notification and the timer stops.':
+        'Timer ke dauran light gayi to notification aayegi aur timer ruk jayega.',
+    'Water pump timer': 'Pani ki motor ka timer',
+    'Reminders': 'Yaad dahaniyan',
+    'Remind me when the light comes back': 'Light aane par yaad dilayein',
     'Continue': 'Aage chalein',
     'Let\'s start': 'Chalo shuru karein',
     'Know when the light will go — before it goes.':
         'Light kab jayegi — jane se pehle jaanein.',
-    'Powered by your neighbours. One tap from you helps your whole street.': 'Pariosiyon ki madad se chalta hai. Aap ka ek tap poori gali ke kaam aata hai.',
+    'Powered by your neighbours. One tap from you helps your whole street.':
+        'Pariosiyon ki madad se chalta hai. Aap ka ek tap poori gali ke kaam aata hai.',
     'Everything in one app': 'Sab kuch ek app mein',
     'Where is your home?': 'Aap ka ghar kahan hai?',
-    'We only use it to know your area (~1 km). Your exact location stays on your phone.': 'Sirf ilaqa (~1 km) jaanne ke liye. Aap ki asal location aap ke phone mein hi rehti hai.',
+    'We only use it to know your area (~1 km). Your exact location stays on your phone.':
+        'Sirf ilaqa (~1 km) jaanne ke liye. Aap ki asal location aap ke phone mein hi rehti hai.',
     'Ghar': 'Ghar',
     'Pick your reporter name': 'Apna reporter naam chunein',
     'Shown on the leaderboard. Any nickname works.':
@@ -178,12 +261,34 @@ const Map<String, Map<String, String>> kTranslations = {
     'We will warn you 15 minutes before a likely cut and tell you when the light comes back.':
         'Light jane se 15 min pehle bata denge aur wapas aane par bhi.',
     'Nickname (shown on leaderboard)': 'Nickname (leaderboard par dikhega)',
+    'areas in the dark now': 'ilaqe abhi andhere mein',
+    'areas with light': 'ilaqon mein light hai',
+    'Share ranking': 'Ranking share karein',
+    'Longest in the dark right now': 'Abhi sab se zyada der se andhera',
+    'Everyone nearby has light right now 🎉':
+        'Abhi aas paas sab ke paas light hai 🎉',
+    'Based on the latest reports in each area around you.':
+        'Aas paas har ilaqe ki taaza reports ki bunyaad par.',
+    'Area ranking': 'Ilaqon ki ranking',
+    'Most active areas': 'Sab se active ilaqe',
     'Based on the forecast for your main area':
         'Main ilaqe ke forecast ke mutabiq',
     '{0} min before': '{0} min pehle',
     'When neighbours report a change': 'Jab pariosi tabdeeli batayein',
     '30 min before the next cut': 'Agli dafa light jane se 30 min pehle',
     'No alerts from 11 pm to 7 am': 'Raat 11 se subah 7 tak koi alert nahi',
+    'Confetti and a sound in the app': 'App mein confetti aur awaaz',
+    'Always see light ON/OFF and the next cut':
+        'Hamesha dekhein light hai ya nahi aur agli baar kab',
+    'Backup time when the light goes, "fully charged" later':
+        'Light jane par backup ka waqt, baad mein "full charge"',
+    'Full in {0}h': '{0} ghante mein full',
+    'When the light comes back': 'Jab light wapas aaye',
+    'PIN needed to open the app': 'App kholne ke liye PIN chahiye',
+    'Off — the app opens without a password':
+        'Band — app bina password ke khulti hai',
+    'Use the phone\'s fingerprint instead of the PIN':
+        'PIN ki jagah phone ka fingerprint',
     'Haptic feedback on taps': 'Tap par halki vibration',
     '{0} followed': '{0} follow kiye',
     'Reports are shared live with your neighbours':
@@ -192,12 +297,21 @@ const Map<String, Map<String, String>> kTranslations = {
         'Farzi pariosi. Live karne ke liye developer ko Firebase jodna hoga.',
     'Delete everything stored on this phone':
         'Is phone mein mehfooz sab kuch mita dein',
+    'Chime': 'Chime',
+    'Bell': 'Ghanti',
+    'Siren': 'Siren',
+    'Horn': 'Horn',
+    'Phone default': 'Phone ki apni',
+    'Alert sound': 'Alert ki awaaz',
     'Language': 'Zubaan',
     'Reset app?': 'App reset karein?',
-    'Your areas, points, settings and checklist on this phone will be deleted. Reports you already sent stay with the community.': 'Is phone se aap ke ilaqe, points, settings aur checklist mit jayenge. Bheji hui reports community ke paas rahengi.',
+    'Your areas, points, settings and checklist on this phone will be deleted. Reports you already sent stay with the community.':
+        'Is phone se aap ke ilaqe, points, settings aur checklist mit jayenge. Bheji hui reports community ke paas rahengi.',
     'Reset': 'Reset',
     'Settings': 'Settings',
     'Alerts': 'Alerts',
+    'Extras': 'Extras',
+    'Security': 'Hifazat',
     'Look & feel': 'Shakal o soorat',
     'Data': 'Data',
     'About': 'Maloomat',
@@ -205,6 +319,12 @@ const Map<String, Map<String, String>> kTranslations = {
     'Light gone / back alerts': 'Light gayi / aayi alerts',
     'Checklist reminder': 'Checklist ki yaad dahani',
     'Quiet hours': 'Khamosh waqt',
+    'Celebrate when light comes back': 'Light aane par jashn',
+    'Status in notification bar': 'Notification bar mein haal',
+    'UPS reminders': 'UPS ki yaad dahani',
+    'Water pump reminder': 'Motor ki yaad dahani',
+    'Fingerprint / face unlock': 'Fingerprint / chehre se kholein',
+    'Change PIN': 'PIN badlein',
     'Theme': 'Theme',
     'Vibration': 'Vibration',
     'Profile': 'Profile',
@@ -252,7 +372,8 @@ const Map<String, Map<String, String>> kTranslations = {
     'Lead-acid': 'Lead-acid',
     'Lithium': 'Lithium',
     'Battery health: {0}%': 'Battery ki sehat: {0}%',
-    'Estimate only. Real backup depends on battery age, temperature and UPS efficiency.': 'Sirf andaza. Asal backup battery ki umar, garmi aur UPS par munhasir hai.',
+    'Estimate only. Real backup depends on battery age, temperature and UPS efficiency.':
+        'Sirf andaza. Asal backup battery ki umar, garmi aur UPS par munhasir hai.',
     'You need about': 'Aap ko takreeban chahiye',
     'panels × {0} W': 'panel × {0} W',
     'inverter': 'inverter',
@@ -271,12 +392,40 @@ const Map<String, Map<String, String>> kTranslations = {
     'Price per unit (from your bill)': 'Fi unit qeemat (bill se)',
     'Fixed charges / meter rent': 'Fixed charges / meter kiraya',
     'Taxes: {0}%': 'Tax: {0}%',
-    'Tariffs change often — copy the per-unit price and taxes from your latest bill for an accurate estimate.': 'Rates badalte rehte hain — sahi andaze ke liye naye bill se fi unit qeemat aur tax likhein.',
+    'Tariffs change often — copy the per-unit price and taxes from your latest bill for an accurate estimate.':
+        'Rates badalte rehte hain — sahi andaze ke liye naye bill se fi unit qeemat aur tax likhein.',
     'Power tools': 'Power tools',
     'Battery': 'Battery',
     'What will you run?': 'Kya kya chalayenge?',
     'Load': 'Load',
     'Your numbers': 'Aap ke hisaab',
+    'Bijli Wrapped': 'Bijli Wrapped',
+    'Coming soon': 'Jald aa raha hai',
+    'Your Wrapped is ready after 3 days of reports in your area. Keep reporting!':
+        'Aap ka Wrapped ilaqe ki 3 din ki reports ke baad tayyar hoga. Report karte rahein!',
+    'Your last 4 weeks with the light. Tap to continue →':
+        'Light ke saath aap ke pichle 4 hafte. Aage ke liye tap karein →',
+    'Total time without light': 'Kul waqt bina light',
+    'That\'s {0} full days in the dark.': 'Yani {0} poore din andhere mein.',
+    'Power cuts': 'Kitni baar light gayi',
+    'The longest one lasted {0}.': 'Sab se lambi {0} chali.',
+    'Worst hour': 'Sab se bura waqt',
+    'The light went most often around this time.':
+        'Is waqt light sab se zyada gayi.',
+    'Last 2 weeks vs before': 'Pichle 2 hafte bamuqabla pehle',
+    'Less loadshedding lately. 🙏': 'Aajkal loadshedding kam hai. 🙏',
+    'More loadshedding lately. 😤': 'Aajkal loadshedding zyada hai. 😤',
+    'Best day': 'Sab se achha din',
+    '{0} — only {1} without light.': '{0} — sirf {1} bina light.',
+    'You as a reporter': 'Aap bataur reporter',
+    '{0} reports · {1} first reports · {2} badges · {3} guesses won':
+        '{0} reports · {1} pehli reports · {2} badges · {3} andaze jeete',
+    'Light was on': 'Light rahi',
+    'Share your Wrapped and see your friends\' too!':
+        'Apna Wrapped share karein aur doston ka bhi dekhein!',
+    'My Bijli Wrapped for {0} ⚡ #BijliKab':
+        '{0} ka mera Bijli Wrapped ⚡ #BijliKab',
+    'Share this': 'Ye share karein',
     '⚡ Light may go in {0} min': '⚡ {0} min mein light ja sakti hai',
     '{0}: expected {1} – {2}. Charge your phone & fill water!':
         '{0}: {1} – {2} ka imkaan. Phone charge karein aur pani bhar lein!',
@@ -287,10 +436,29 @@ const Map<String, Map<String, String>> kTranslations = {
     'Neighbours just reported the power is back.':
         'Pariosiyon ne abhi light aane ki report ki.',
     '📝 Before the light goes': '📝 Light jane se pehle',
+    '🔋 UPS should be fully charged': '🔋 UPS full charge ho gaya hoga',
+    'The light has been on long enough to charge your UPS.':
+        'Light itni der rahi ke UPS charge ho jaye.',
+    '🔋 Running on UPS': '🔋 UPS par chal raha hai',
+    'Your UPS should last about {0} with your usual load.':
+        'Aap ke aam load par UPS takreeban {0} chalega.',
+    '🚰 Light is back — run the water pump':
+        '🚰 Light aa gayi — motor chala lein',
+    '{0}: fill the tank while there is power.':
+        '{0}: light hote hue tanki bhar lein.',
+    '🚰 Tank should be full': '🚰 Tanki bhar gayi hogi',
+    'Switch off the water pump.': 'Motor band kar dein.',
+    '🚰 Light gone — pump stopped': '🚰 Light chali gayi — motor ruk gayi',
+    'The tank timer was cancelled. Start it again when the light is back.':
+        'Tanki ka timer band ho gaya. Light aane par dobara chalayein.',
+    '💡✅ Light is back!': '💡✅ Light aa gayi!',
+    'This is how alerts will sound.': 'Alerts aisi awaaz mein aayenge.',
     'Know when the light will go — before it goes! ⚡ Try Bijli Kab?':
         'Light kab jayegi — jane se pehle jaanein! ⚡ Bijli Kab? try karein',
     'Back ~{0}': 'Wapsi ~{0}',
     'Updated {0}': 'Update {0}',
+    'I check the light with Bijli Kab? ⚡ Follow my area with code {0} (More → Invite friends → Enter code).':
+        'Main Bijli Kab? se light check karta hoon ⚡ Mera ilaqa code {0} se follow karein (Mazeed → Doston ko bulayein → code daalein).',
     'Charge phone & power bank': 'Phone aur power bank charge karein',
     'Fill the water tank': 'Pani ki tanki bhar lein',
     'Iron tomorrow\'s clothes': 'Kal ke kapde press kar lein',
@@ -300,6 +468,21 @@ const Map<String, Map<String, String>> kTranslations = {
     'Your areas': 'Aap ke ilaqe',
     'Add another area': 'Aur ilaqa add karein',
     'Alerts & widget': 'Alerts aur widget',
+    'Andaza Lagao!': 'Andaza Lagao!',
+    'Guess when the light comes back. Closer guess = more points!':
+        'Andaza lagayein light kab aayegi. Jitna qareeb, utne zyada points!',
+    'Your guess: {0}. Points when the light comes back.':
+        'Aap ka andaza: {0}. Light aane par points milenge.',
+    'Other time': 'Koi aur waqt',
+    'Guess saved: {0} 🎯': 'Andaza save: {0} 🎯',
+    'Light came back at {0}': 'Light {0} par aayi',
+    'Your guess came too late to count (less than 10 min before).':
+        'Aap ka andaza der se tha, shumar nahi hua (10 min se kam pehle).',
+    'Exactly right! +{0} points': 'Bilkul sahi! +{0} points',
+    'You were {0} off. +{1} points': 'Aap {0} se chooke. +{1} points',
+    'Area mood': 'Ilaqe ka mood',
+    '{0} people · last 3h': '{0} log · pichle 3 ghante',
+    'Light aa gayi! 🎉': 'Light aa gayi! 🎉',
     'Thanks! You can report again in {0}':
         'Shukriya! Dobara report {0} mein kar sakte hain',
     'Light is back?': 'Light aa gayi?',
@@ -310,26 +493,53 @@ const Map<String, Map<String, String>> kTranslations = {
     'Yes, light gayi!': 'Haan, light gayi!',
     'Pehla Khabri!': 'Pehla Khabri!',
     'Shukriya!': 'Shukriya!',
-    'You were the first to tell your area. Neighbours are being updated.': 'Aap ne sab se pehle ilaqe ko bataya. Pariosiyon ko khabar di ja rahi hai.',
+    'You were the first to tell your area. Neighbours are being updated.':
+        'Aap ne sab se pehle ilaqe ko bataya. Pariosiyon ko khabar di ja rahi hai.',
     'Your report makes the forecast better for everyone.':
         'Aap ki report se sab ka forecast behtar hota hai.',
-    'points': 'points',
     'Level up! You are now {0} {1}': 'Level up! Ab aap {0} {1} hain',
     'New badge!': 'Naya badge!',
     'Done': 'Theek hai',
+    'First Report': 'Pehli Report',
+    'Send your first report': 'Apni pehli report bhejein',
     'Regular': 'Regular',
     'Send 10 reports': '10 reports bhejein',
     'Dedicated': 'Pakka reporter',
     'Send 50 reports': '50 reports bhejein',
+    'Century': 'Century',
+    'Send 100 reports': '100 reports bhejein',
+    'Pehla Khabri': 'Pehla Khabri',
+    'Be first to report a change': 'Tabdeeli sab se pehle batayein',
+    'News Breaker': 'Breaking News',
+    'Be first to report 5 times': '5 baar sab se pehle batayein',
+    'Night Owl': 'Raat ka Ullu',
+    'Report between midnight and 5 am':
+        'Raat 12 se subah 5 ke beech report karein',
+    'Detective': 'Jasoos',
+    'Add details (low voltage, transformer…) 5 times':
+        '5 baar detail likhein (kam voltage, transformer…)',
+    'On Fire': 'Aag laga di',
+    'Report 3 days in a row': 'Lagatar 3 din report karein',
+    'Unstoppable': 'Na rukne wala',
+    'Report 7 days in a row': 'Lagatar 7 din report karein',
     'Family Watch': 'Family Watch',
     'Follow 3 areas': '3 ilaqe follow karein',
+    'Spread the Word': 'Baat phailayein',
+    'Share your stats or the app': 'Apne stats ya app share karein',
+    'Sharp Shooter': 'Pakka Nishanchi',
+    'Win 3 guess games': '3 andaza games jeetein',
+    'Challenge Champion': 'Challenge Champion',
+    'Complete 5 weekly challenges': '5 hafte ke challenges poore karein',
+    'Yaaron ka Yaar': 'Yaaron ka Yaar',
+    'Invite friends 3 times': '3 baar doston ko bulayein',
+    'Bijli Legend': 'Bijli Legend',
+    'Reach 3000 points': '3000 points tak pohnchein',
     'Newcomer': 'Naya',
     'Spark': 'Chingari',
     'Reporter': 'Reporter',
     'Street Watch': 'Gali ka Pehredar',
     'Mohalla Hero': 'Mohalla Hero',
     'Power Guru': 'Power Guru',
-    'Bijli Legend': 'Bijli Legend',
     'Ceiling fan': 'Pankha',
     'LED bulb': 'LED bulb',
     'Tube light': 'Tube light',
@@ -342,27 +552,65 @@ const Map<String, Map<String, String>> kTranslations = {
     'Water pump': 'Pani ki motor',
     'Iron': 'Istri',
     'Inverter AC (1 ton)': 'Inverter AC (1 ton)',
+    'Send {0} reports': '{0} reports bhejein',
+    'Be first to report {0} times': '{0} baar sab se pehle batayein',
+    'Report on {0} different days': '{0} alag dinon mein report karein',
+    'Win {0} guess game': '{0} andaza game jeetein',
+    'Win {0} guess games': '{0} andaza games jeetein',
+    'Share {0} time': '{0} baar share karein',
+    'Add a detail to {0} reports': '{0} reports mein detail likhein',
+    'React to your area\'s mood {0} times':
+        'Ilaqe ke mood par {0} baar react karein',
     'Turn on location (GPS) and try again':
         'Location (GPS) on kar ke dobara koshish karein',
     'Location permission denied. You can pick your area on the map instead.':
         'Location ki ijazat nahi mili. Map par ilaqa chun sakte hain.',
-    'Could not get your location. Try again outside or pick on the map.': 'Location nahi mili. Bahar ja kar dobara koshish karein ya map par chunein.',
+    'Could not get your location. Try again outside or pick on the map.':
+        'Location nahi mili. Bahar ja kar dobara koshish karein ya map par chunein.',
+    'Challenges': 'Challenges',
+    'UPS backup': 'UPS backup',
+    'Solar planner': 'Solar planner',
+    'Bill estimate': 'Bill ka andaza',
+    'Pump timer': 'Motor timer',
+    'Share app': 'App share karein',
+    'Rate us': 'Rating dein',
+    'K-Electric (Karachi)': 'K-Electric (Karachi)',
+    'India (national power helpline)': 'India (qaumi bijli helpline)',
     'You tap': 'Aap tap karte hain',
     'Light Gayi or Light Aayi — takes one second.':
         'Light Gayi ya Light Aayi — sirf ek second.',
     'Neighbours confirm': 'Pariosi tasdeeq karte hain',
-    'Reports from the same ~1 km area are combined. A single wrong tap is out-voted.': 'Ek hi ~1 km ilaqe ki reports mila di jati hain. Ek ghalat tap baqi votes se haar jata hai.',
+    'Reports from the same ~1 km area are combined. A single wrong tap is out-voted.':
+        'Ek hi ~1 km ilaqe ki reports mila di jati hain. Ek ghalat tap baqi votes se haar jata hai.',
     'The app learns': 'App seekhti hai',
-    'After a few days it learns when cuts usually happen in your area.': 'Kuch din mein seekh jati hai ke aap ke ilaqe mein light aksar kab jati hai.',
+    'After a few days it learns when cuts usually happen in your area.':
+        'Kuch din mein seekh jati hai ke aap ke ilaqe mein light aksar kab jati hai.',
     'Everyone gets warned': 'Sab ko khabar ho jati hai',
     'Alerts before the next cut and when the light comes back.':
         'Light jane se pehle aur wapas aane par alerts.',
     'No phone number, email or real name needed.':
         'Phone number, email ya asal naam ki zaroorat nahi.',
-    'Your exact location never leaves the phone — only the ~1 km area code is sent with a report.': 'Aap ki asal location phone se bahar nahi jati — report ke saath sirf ~1 km ilaqe ka code jata hai.',
-    'Your nickname and points are public on the leaderboard; use any name you like.': 'Aap ka nickname aur points leaderboard par sab dekh sakte hain; koi bhi naam rakhein.',
+    'Your exact location never leaves the phone — only the ~1 km area code is sent with a report.':
+        'Aap ki asal location phone se bahar nahi jati — report ke saath sirf ~1 km ilaqe ka code jata hai.',
+    'Your nickname and points are public on the leaderboard; use any name you like.':
+        'Aap ka nickname aur points leaderboard par sab dekh sakte hain; koi bhi naam rakhein.',
     'No ads, no trackers. Delete everything any time from Settings.':
         'Na ads, na tracker. Settings se kabhi bhi sab mita dein.',
+    'One-tap reports': 'Ek tap report',
+    'Light gayi? Light aayi? Tell your area in one second.':
+        'Light gayi? Light aayi? Ek second mein ilaqe ko batayein.',
+    'Smart forecast': 'Smart forecast',
+    'Learns your area\'s loadshedding pattern and predicts the next cut.':
+        'Ilaqe ki loadshedding ka pattern seekh kar agli baar batata hai.',
+    'Get warned before the cut — charge the phone, fill the water.':
+        'Light jane se pehle khabar — phone charge, pani bhar lein.',
+    'See which areas around you have light right now.':
+        'Dekhein aas paas kahan abhi light hai.',
+    'Points & badges': 'Points aur badges',
+    'Climb the leaderboard and become the Mohalla Hero.':
+        'Leaderboard par upar jayein aur Mohalla Hero banein.',
+    'UPS backup, solar planner and bill estimate.':
+        'UPS backup, solar planner aur bill ka andaza.',
     'Neon Volt': 'Neon Volt',
     'Midnight Blue': 'Midnight Blue',
     'Pure Black': 'Pure Black',
@@ -382,56 +630,17 @@ const Map<String, Map<String, String>> kTranslations = {
     'Fri': 'Juma',
     'Sat': 'Hafta',
     'Sun': 'Itwar',
-    'First Report': 'Pehli Report',
-    'Send your first report': 'Apni pehli report bhejein',
-    'Century': 'Century',
-    'Send 100 reports': '100 reports bhejein',
-    'Pehla Khabri': 'Pehla Khabri',
-    'Be first to report a change': 'Tabdeeli sab se pehle batayein',
-    'News Breaker': 'Breaking News',
-    'Be first to report 5 times': '5 baar sab se pehle batayein',
-    'Night Owl': 'Raat ka Ullu',
-    'Report between midnight and 5 am':
-        'Raat 12 se subah 5 ke beech report karein',
-    'Detective': 'Jasoos',
-    'Add details (low voltage, transformer…) 5 times':
-        '5 baar detail likhein (kam voltage, transformer…)',
-    'On Fire': 'Aag laga di',
-    'Report 3 days in a row': 'Lagatar 3 din report karein',
-    'Unstoppable': 'Na rukne wala',
-    'Report 7 days in a row': 'Lagatar 7 din report karein',
-    'Spread the Word': 'Baat phailayein',
-    'Share your stats or the app': 'Apne stats ya app share karein',
-    'Reach 3000 points': '3000 points tak pohnchein',
-    'UPS backup': 'UPS backup',
-    'Solar planner': 'Solar planner',
-    'Bill estimate': 'Bill ka andaza',
-    'Share app': 'App share karein',
-    'Rate us': 'Rating dein',
-    'One-tap reports': 'Ek tap report',
-    'Light gayi? Light aayi? Tell your area in one second.':
-        'Light gayi? Light aayi? Ek second mein ilaqe ko batayein.',
-    'Smart forecast': 'Smart forecast',
-    'Learns your area\'s loadshedding pattern and predicts the next cut.':
-        'Ilaqe ki loadshedding ka pattern seekh kar agli baar batata hai.',
-    'Get warned before the cut — charge the phone, fill the water.':
-        'Light jane se pehle khabar — phone charge, pani bhar lein.',
-    'See which areas around you have light right now.':
-        'Dekhein aas paas kahan abhi light hai.',
-    'Points & badges': 'Points aur badges',
-    'Climb the leaderboard and become the Mohalla Hero.':
-        'Leaderboard par upar jayein aur Mohalla Hero banein.',
-    'UPS backup, solar planner and bill estimate.':
-        'UPS backup, solar planner aur bill ka andaza.',
     'On': 'On',
     'Off': 'Off',
     'Expected': 'Imkaan',
+    'Pakistan (LESCO, IESCO, FESCO, MEPCO, GEPCO, PESCO, HESCO…)':
+        'Pakistan (LESCO, IESCO, FESCO, MEPCO, GEPCO, PESCO, HESCO…)',
   },
   'ur': {
-    '1h': '1 گھنٹہ',
-    '1h {1}m': '1 گھنٹہ {1} منٹ',
     'just now': 'ابھی ابھی',
     '{0}m': '{0} منٹ',
+    '1h': '1 گھنٹہ',
+    '1h {1}m': '1 گھنٹہ {1} منٹ',
     '{0}h': '{0} گھنٹے',
     '{0}h {1}m': '{0} گھنٹے {1} منٹ',
     '{0}d': '{0} دن',
@@ -450,6 +659,8 @@ const Map<String, Map<String, String>> kTranslations = {
     'Transformer fault': 'ٹرانسفارمر خراب',
     'Scheduled loadshedding': 'شیڈول لوڈشیڈنگ',
     'Wire / cable fault': 'تار / کیبل خراب',
+    'Challenge complete!': 'چیلنج مکمل!',
+    'points': 'پوائنٹس',
     'Know before the light goes': 'لائٹ جانے سے پہلے جانیں',
     'Forecasts are estimates from community reports, not official information.':
         'پیشگوئی لوگوں کی رپورٹس کا اندازہ ہے، سرکاری معلومات نہیں۔',
@@ -459,7 +670,8 @@ const Map<String, Map<String, String>> kTranslations = {
     'Send feedback': 'رائے بھیجیں',
     'Rate on Play Store': 'پلے اسٹور پر ریٹنگ دیں',
     'Share with friends': 'دوستوں کو بھیجیں',
-    'Drag the map so the pin is on your home. The box is your area (~1 km).': 'نقشہ کھسکائیں تاکہ پن آپ کے گھر پر ہو۔ خانہ آپ کا علاقہ ہے (~1 کلومیٹر)۔',
+    'Drag the map so the pin is on your home. The box is your area (~1 km).':
+        'نقشہ کھسکائیں تاکہ پن آپ کے گھر پر ہو۔ خانہ آپ کا علاقہ ہے (~1 کلومیٹر)۔',
     'Finding the area name…': 'علاقے کا نام ڈھونڈ رہے ہیں…',
     'Finding your location…': 'آپ کا مقام ڈھونڈ رہے ہیں…',
     'Name (e.g. Ghar, Office, Ammi ka ghar)':
@@ -467,7 +679,8 @@ const Map<String, Map<String, String>> kTranslations = {
     'Save this area': 'یہ علاقہ محفوظ کریں',
     'Choose your area': 'اپنا علاقہ چنیں',
     'Add area': 'علاقہ شامل کریں',
-    'Follow your home, office, school or family. The first area (★) gets alerts and the home-screen widget.': 'گھر، دفتر، اسکول یا فیملی کو فالو کریں۔ پہلے علاقے (★) کے الرٹس اور ہوم اسکرین ویجیٹ آتے ہیں۔',
+    'Follow your home, office, school or family. The first area (★) gets alerts and the home-screen widget.':
+        'گھر، دفتر، اسکول یا فیملی کو فالو کریں۔ پہلے علاقے (★) کے الرٹس اور ہوم اسکرین ویجیٹ آتے ہیں۔',
     'You need at least one area.': 'کم از کم ایک علاقہ ضروری ہے۔',
     'Make main area (★)': 'مرکزی علاقہ بنائیں (★)',
     'Rename': 'نام بدلیں',
@@ -487,6 +700,13 @@ const Map<String, Map<String, String>> kTranslations = {
     '{0} points': '{0} پوائنٹس',
     'Badges': 'بیجز',
     'Levels': 'لیولز',
+    '{0} of {1} done this week': 'اس ہفتے {1} میں سے {0} مکمل',
+    'New challenges in {0} days {1} hours': 'نئے چیلنج {0} دن {1} گھنٹے میں',
+    'Completed so far: {0}': 'اب تک مکمل: {0}',
+    'Challenges are the same for everyone and change every Monday. Rewards are added automatically.':
+        'چیلنج سب کے لیے ایک جیسے ہیں اور ہر پیر کو بدلتے ہیں۔ انعام خود مل جاتا ہے۔',
+    'Reward: +{0} points': 'انعام: +{0} پوائنٹس',
+    'Weekly challenges': 'ہفتے کے چیلنج',
     'Untick all': 'سب ہٹائیں',
     'All set! Let it go 😎': 'سب تیار! اب جائے تو جائے 😎',
     'Get ready for the cut': 'لائٹ جانے کی تیاری کریں',
@@ -496,6 +716,28 @@ const Map<String, Map<String, String>> kTranslations = {
     'Add your own item…': 'اپنی چیز لکھیں…',
     'Before the light goes': 'لائٹ جانے سے پہلے',
     'Checklist': 'چیک لسٹ',
+    'since {0}': '{0} سے',
+    'No electricity in our area.': 'ہمارے علاقے میں بجلی نہیں ہے۔',
+    'Area': 'علاقہ',
+    'Reference no.': 'ریفرنس نمبر',
+    'Could not open the phone app.': 'فون کی ایپ نہیں کھلی۔',
+    'Light gone for too long? Complain in one tap.':
+        'لائٹ بہت دیر سے گئی ہے؟ ایک ٹیپ میں شکایت کریں۔',
+    'Call {0}': '{0} پر کال',
+    'SMS': 'ایس ایم ایس',
+    'Helpline number (from your bill)': 'ہیلپ لائن نمبر (بل سے)',
+    'Reference / consumer number (optional)': 'ریفرنس / صارف نمبر (اختیاری)',
+    'Add': 'شامل کریں',
+    'Got a complaint number from the helpline? Save it here so you can follow up.':
+        'ہیلپ لائن سے شکایت نمبر ملا؟ یہاں محفوظ کریں تاکہ بعد میں پوچھ سکیں۔',
+    'Complaint': 'شکایت',
+    'Check the helpline number printed on your electricity bill — it can differ by company.':
+        'اپنے بجلی کے بل پر لکھا ہیلپ لائن نمبر چیک کر لیں — ہر کمپنی کا الگ ہو سکتا ہے۔',
+    'Save complaint': 'شکایت محفوظ کریں',
+    'Complaint number': 'شکایت نمبر',
+    'Note (optional)': 'نوٹ (اختیاری)',
+    'Helpline': 'ہیلپ لائن',
+    'My complaints': 'میری شکایات',
     'Forecast': 'پیشگوئی',
     'Learning your area…': 'آپ کا علاقہ سیکھ رہے ہیں…',
     'No cut expected in 24h 🎉': '24 گھنٹوں میں لائٹ جانے کا امکان نہیں 🎉',
@@ -503,13 +745,14 @@ const Map<String, Map<String, String>> kTranslations = {
     'Based on {0} days of neighbour reports':
         'پڑوسیوں کی {0} دن کی رپورٹس پر مبنی',
     'official schedule': 'سرکاری شیڈول',
-    'Forecasts start after ~2 days of reports. Keep tapping Light Gayi / Light Aayi — or add the official schedule below.': 'پیشگوئی ~2 دن کی رپورٹس کے بعد شروع ہوتی ہے۔ لائٹ گئی / لائٹ آئی دباتے رہیں — یا نیچے سرکاری شیڈول ڈالیں۔',
+    'Forecasts start after ~2 days of reports. Keep tapping Light Gayi / Light Aayi — or add the official schedule below.':
+        'پیشگوئی ~2 دن کی رپورٹس کے بعد شروع ہوتی ہے۔ لائٹ گئی / لائٹ آئی دباتے رہیں — یا نیچے سرکاری شیڈول ڈالیں۔',
     'Nothing expected. Enjoy the light! (We will warn you if that changes.)':
         'کچھ متوقع نہیں۔ لائٹ کے مزے لیں! (بدلا تو ہم بتا دیں گے۔)',
     'Darker red = more likely. Learned from the last 4 weeks.':
         'گہرا سرخ = زیادہ امکان۔ پچھلے 4 ہفتوں سے سیکھا۔',
-    'Add': 'شامل کریں',
-    'Got a loadshedding schedule from your electricity company? Add it here and it will be used in the forecast and alerts.': 'بجلی کمپنی کا لوڈشیڈنگ شیڈول ملا ہے؟ یہاں ڈالیں، پیشگوئی اور الرٹس میں استعمال ہوگا۔',
+    'Got a loadshedding schedule from your electricity company? Add it here and it will be used in the forecast and alerts.':
+        'بجلی کمپنی کا لوڈشیڈنگ شیڈول ملا ہے؟ یہاں ڈالیں، پیشگوئی اور الرٹس میں استعمال ہوگا۔',
     'Before-the-cut checklist': 'لائٹ جانے سے پہلے کی چیک لسٹ',
     'Get a reminder 30 min before the next cut':
         'اگلی بار لائٹ جانے سے 30 منٹ پہلے یاد دہانی',
@@ -556,6 +799,27 @@ const Map<String, Map<String, String>> kTranslations = {
     'From the official schedule': 'سرکاری شیڈول سے',
     '{0} chance · learned from your area': '{0} امکان · آپ کے علاقے سے سیکھا',
     'Coming up': 'آگے کیا ہے',
+    'More neighbours = more accurate light status':
+        'زیادہ پڑوسی = زیادہ درست لائٹ کا حال',
+    'Invite your street and family. They can follow your area with your code.':
+        'گلی والوں اور فیملی کو بلائیں۔ وہ آپ کے کوڈ سے آپ کا علاقہ فالو کر سکتے ہیں۔',
+    'Your area code': 'آپ کے علاقے کا کوڈ',
+    'Code copied': 'کوڈ کاپی ہو گیا',
+    'Invite on WhatsApp & more': 'واٹس ایپ وغیرہ پر بلائیں',
+    'Invites sent: {0}': 'بھیجے گئے دعوت نامے: {0}',
+    'Follow your friend\'s or family\'s area.':
+        'دوست یا فیملی کا علاقہ فالو کریں۔',
+    'Follow their area — and get +20 welcome points the first time!':
+        'ان کا علاقہ فالو کریں — اور پہلی بار +20 خوش آمدید پوائنٹس پائیں!',
+    '6-letter code': '6 حرفی کوڈ',
+    'Area added to your list 🤝': 'علاقہ آپ کی فہرست میں شامل ہو گیا 🤝',
+    'You already follow this area.': 'آپ یہ علاقہ پہلے سے فالو کرتے ہیں۔',
+    'That code doesn\'t look right. It has 6 letters/numbers.':
+        'یہ کوڈ درست نہیں لگ رہا۔ اس میں 6 حروف/نمبر ہوتے ہیں۔',
+    'The code only shows the ~1 km area, never your exact home.':
+        'کوڈ صرف ~1 کلومیٹر علاقہ بتاتا ہے، آپ کا اصل گھر کبھی نہیں۔',
+    'Invite friends': 'دوستوں کو بلائیں',
+    'Got a code from a friend?': 'دوست سے کوڈ ملا؟',
     'Everyone': 'سب لوگ',
     'My city': 'میرا شہر',
     'Could not load the leaderboard. Check your internet.':
@@ -564,6 +828,16 @@ const Map<String, Map<String, String>> kTranslations = {
     'You': 'آپ',
     '{0} reports': '{0} رپورٹس',
     'Leaderboard': 'لیڈر بورڈ',
+    'Unlock Bijli Kab?': 'Bijli Kab? کھولیں',
+    'Wrong PIN, try again': 'غلط پن، دوبارہ کوشش کریں',
+    'Enter your PIN': 'اپنا پن ڈالیں',
+    'App Lock is on 🔒': 'ایپ لاک آن ہو گیا 🔒',
+    'PINs did not match. Start again.': 'پن میل نہیں کھائے۔ دوبارہ شروع کریں۔',
+    'Choose a 4-digit PIN': '4 ہندسوں کا پن چنیں',
+    'Enter the same PIN again': 'وہی پن دوبارہ ڈالیں',
+    'You can turn this off any time in Settings.':
+        'اسے سیٹنگز سے کبھی بھی بند کر سکتے ہیں۔',
+    'App Lock': 'ایپ لاک',
     'Could not load the map. Check your internet.':
         'نقشہ لوڈ نہیں ہوا۔ انٹرنیٹ چیک کریں۔',
     'Live map': 'لائیو نقشہ',
@@ -584,6 +858,20 @@ const Map<String, Map<String, String>> kTranslations = {
     'first reports': 'پہلی رپورٹس',
     'badges': 'بیجز',
     'Features': 'فیچرز',
+    'until the tank is full': 'ٹینکی بھرنے تک',
+    'to fill the tank': 'ٹینکی بھرنے میں',
+    'Tank fills in {0} minutes': 'ٹینکی {0} منٹ میں بھرتی ہے',
+    'Start pump timer': 'موٹر ٹائمر شروع کریں',
+    'The light seems to be off in your main area — the pump may not run.':
+        'لگتا ہے مرکزی علاقے میں لائٹ نہیں — موٹر شاید نہ چلے۔',
+    'Stop timer': 'ٹائمر بند کریں',
+    'So you can fill the tank while there is power':
+        'تاکہ لائٹ ہوتے ہوئے ٹینکی بھر لیں',
+    'If the light goes while the timer runs, you get a notification and the timer stops.':
+        'ٹائمر کے دوران لائٹ گئی تو نوٹیفکیشن آئے گا اور ٹائمر رک جائے گا۔',
+    'Water pump timer': 'پانی کی موٹر کا ٹائمر',
+    'Reminders': 'یاد دہانیاں',
+    'Remind me when the light comes back': 'لائٹ آنے پر یاد دلائیں',
     'Continue': 'آگے چلیں',
     'Let\'s start': 'چلیں شروع کریں',
     'Know when the light will go — before it goes.':
@@ -592,7 +880,8 @@ const Map<String, Map<String, String>> kTranslations = {
         'پڑوسیوں کی مدد سے چلتا ہے۔ آپ کا ایک ٹیپ پوری گلی کے کام آتا ہے۔',
     'Everything in one app': 'سب کچھ ایک ایپ میں',
     'Where is your home?': 'آپ کا گھر کہاں ہے؟',
-    'We only use it to know your area (~1 km). Your exact location stays on your phone.': 'صرف علاقہ (~1 کلومیٹر) جاننے کے لیے۔ آپ کا اصل مقام آپ کے فون میں ہی رہتا ہے۔',
+    'We only use it to know your area (~1 km). Your exact location stays on your phone.':
+        'صرف علاقہ (~1 کلومیٹر) جاننے کے لیے۔ آپ کا اصل مقام آپ کے فون میں ہی رہتا ہے۔',
     'Ghar': 'گھر',
     'Pick your reporter name': 'اپنا رپورٹر نام چنیں',
     'Shown on the leaderboard. Any nickname works.':
@@ -603,12 +892,34 @@ const Map<String, Map<String, String>> kTranslations = {
     'We will warn you 15 minutes before a likely cut and tell you when the light comes back.':
         'لائٹ جانے سے 15 منٹ پہلے بتا دیں گے اور واپس آنے پر بھی۔',
     'Nickname (shown on leaderboard)': 'نک نیم (لیڈر بورڈ پر دکھے گا)',
+    'areas in the dark now': 'علاقے ابھی اندھیرے میں',
+    'areas with light': 'علاقوں میں لائٹ ہے',
+    'Share ranking': 'رینکنگ شیئر کریں',
+    'Longest in the dark right now': 'ابھی سب سے زیادہ دیر سے اندھیرا',
+    'Everyone nearby has light right now 🎉':
+        'ابھی آس پاس سب کے پاس لائٹ ہے 🎉',
+    'Based on the latest reports in each area around you.':
+        'آس پاس ہر علاقے کی تازہ رپورٹس کی بنیاد پر۔',
+    'Area ranking': 'علاقوں کی رینکنگ',
+    'Most active areas': 'سب سے فعال علاقے',
     'Based on the forecast for your main area':
         'مرکزی علاقے کی پیشگوئی کے مطابق',
     '{0} min before': '{0} منٹ پہلے',
     'When neighbours report a change': 'جب پڑوسی تبدیلی بتائیں',
     '30 min before the next cut': 'اگلی بار لائٹ جانے سے 30 منٹ پہلے',
     'No alerts from 11 pm to 7 am': 'رات 11 سے صبح 7 تک کوئی الرٹ نہیں',
+    'Confetti and a sound in the app': 'ایپ میں کنفیٹی اور آواز',
+    'Always see light ON/OFF and the next cut':
+        'ہمیشہ دیکھیں لائٹ ہے یا نہیں اور اگلی بار کب',
+    'Backup time when the light goes, "fully charged" later':
+        'لائٹ جانے پر بیک اپ کا وقت، بعد میں "فل چارج"',
+    'Full in {0}h': '{0} گھنٹے میں فل',
+    'When the light comes back': 'جب لائٹ واپس آئے',
+    'PIN needed to open the app': 'ایپ کھولنے کے لیے پن چاہیے',
+    'Off — the app opens without a password':
+        'بند — ایپ بغیر پاس ورڈ کے کھلتی ہے',
+    'Use the phone\'s fingerprint instead of the PIN':
+        'پن کی جگہ فون کا فنگر پرنٹ',
     'Haptic feedback on taps': 'ٹیپ پر ہلکی وائبریشن',
     '{0} followed': '{0} فالو کیے',
     'Reports are shared live with your neighbours':
@@ -616,12 +927,21 @@ const Map<String, Map<String, String>> kTranslations = {
     'Simulated neighbours. The developer must connect Firebase to go live.':
         'فرضی پڑوسی۔ لائیو کرنے کے لیے ڈیولپر کو فائر بیس جوڑنا ہوگا۔',
     'Delete everything stored on this phone': 'اس فون میں محفوظ سب کچھ مٹا دیں',
+    'Chime': 'گھنٹی کی دھن',
+    'Bell': 'گھنٹی',
+    'Siren': 'سائرن',
+    'Horn': 'ہارن',
+    'Phone default': 'فون کی اپنی',
+    'Alert sound': 'الرٹ کی آواز',
     'Language': 'زبان',
     'Reset app?': 'ایپ ری سیٹ کریں؟',
-    'Your areas, points, settings and checklist on this phone will be deleted. Reports you already sent stay with the community.': 'اس فون سے آپ کے علاقے، پوائنٹس، سیٹنگز اور چیک لسٹ مٹ جائیں گے۔ بھیجی گئی رپورٹس کمیونٹی کے پاس رہیں گی۔',
+    'Your areas, points, settings and checklist on this phone will be deleted. Reports you already sent stay with the community.':
+        'اس فون سے آپ کے علاقے، پوائنٹس، سیٹنگز اور چیک لسٹ مٹ جائیں گے۔ بھیجی گئی رپورٹس کمیونٹی کے پاس رہیں گی۔',
     'Reset': 'ری سیٹ',
     'Settings': 'سیٹنگز',
     'Alerts': 'الرٹس',
+    'Extras': 'اضافی',
+    'Security': 'حفاظت',
     'Look & feel': 'شکل و صورت',
     'Data': 'ڈیٹا',
     'About': 'معلومات',
@@ -629,6 +949,12 @@ const Map<String, Map<String, String>> kTranslations = {
     'Light gone / back alerts': 'لائٹ گئی / آئی الرٹس',
     'Checklist reminder': 'چیک لسٹ کی یاد دہانی',
     'Quiet hours': 'خاموش اوقات',
+    'Celebrate when light comes back': 'لائٹ آنے پر جشن',
+    'Status in notification bar': 'نوٹیفکیشن بار میں حال',
+    'UPS reminders': 'یو پی ایس کی یاد دہانی',
+    'Water pump reminder': 'موٹر کی یاد دہانی',
+    'Fingerprint / face unlock': 'فنگر پرنٹ / چہرے سے کھولیں',
+    'Change PIN': 'پن بدلیں',
     'Theme': 'تھیم',
     'Vibration': 'وائبریشن',
     'Profile': 'پروفائل',
@@ -676,7 +1002,8 @@ const Map<String, Map<String, String>> kTranslations = {
     'Lead-acid': 'لیڈ ایسڈ',
     'Lithium': 'لیتھیم',
     'Battery health: {0}%': 'بیٹری کی صحت: {0}%',
-    'Estimate only. Real backup depends on battery age, temperature and UPS efficiency.': 'صرف اندازہ۔ اصل بیک اپ بیٹری کی عمر، درجہ حرارت اور یو پی ایس پر منحصر ہے۔',
+    'Estimate only. Real backup depends on battery age, temperature and UPS efficiency.':
+        'صرف اندازہ۔ اصل بیک اپ بیٹری کی عمر، درجہ حرارت اور یو پی ایس پر منحصر ہے۔',
     'You need about': 'آپ کو تقریباً چاہیے',
     'panels × {0} W': 'پینل × {0} واٹ',
     'inverter': 'انورٹر',
@@ -695,12 +1022,39 @@ const Map<String, Map<String, String>> kTranslations = {
     'Price per unit (from your bill)': 'فی یونٹ قیمت (بل سے)',
     'Fixed charges / meter rent': 'مقررہ چارجز / میٹر کرایہ',
     'Taxes: {0}%': 'ٹیکس: {0}%',
-    'Tariffs change often — copy the per-unit price and taxes from your latest bill for an accurate estimate.': 'نرخ بدلتے رہتے ہیں — درست اندازے کے لیے تازہ بل سے فی یونٹ قیمت اور ٹیکس لکھیں۔',
+    'Tariffs change often — copy the per-unit price and taxes from your latest bill for an accurate estimate.':
+        'نرخ بدلتے رہتے ہیں — درست اندازے کے لیے تازہ بل سے فی یونٹ قیمت اور ٹیکس لکھیں۔',
     'Power tools': 'پاور ٹولز',
     'Battery': 'بیٹری',
     'What will you run?': 'کیا کیا چلائیں گے؟',
     'Load': 'لوڈ',
     'Your numbers': 'آپ کا حساب',
+    'Bijli Wrapped': 'بجلی ریپڈ',
+    'Coming soon': 'جلد آ رہا ہے',
+    'Your Wrapped is ready after 3 days of reports in your area. Keep reporting!':
+        'آپ کا ریپڈ علاقے کی 3 دن کی رپورٹس کے بعد تیار ہوگا۔ رپورٹ کرتے رہیں!',
+    'Your last 4 weeks with the light. Tap to continue →':
+        'لائٹ کے ساتھ آپ کے پچھلے 4 ہفتے۔ آگے کے لیے ٹیپ کریں ←',
+    'Total time without light': 'کل وقت بغیر لائٹ',
+    'That\'s {0} full days in the dark.': 'یعنی {0} پورے دن اندھیرے میں۔',
+    'Power cuts': 'کتنی بار لائٹ گئی',
+    'The longest one lasted {0}.': 'سب سے لمبی {0} چلی۔',
+    'Worst hour': 'سب سے برا وقت',
+    'The light went most often around this time.':
+        'اس وقت لائٹ سب سے زیادہ گئی۔',
+    'Last 2 weeks vs before': 'پچھلے 2 ہفتے بمقابلہ پہلے',
+    'Less loadshedding lately. 🙏': 'آج کل لوڈشیڈنگ کم ہے۔ 🙏',
+    'More loadshedding lately. 😤': 'آج کل لوڈشیڈنگ زیادہ ہے۔ 😤',
+    'Best day': 'سب سے اچھا دن',
+    '{0} — only {1} without light.': '{0} — صرف {1} بغیر لائٹ۔',
+    'You as a reporter': 'آپ بطور رپورٹر',
+    '{0} reports · {1} first reports · {2} badges · {3} guesses won':
+        '{0} رپورٹس · {1} پہلی رپورٹس · {2} بیجز · {3} اندازے جیتے',
+    'Light was on': 'لائٹ رہی',
+    'Share your Wrapped and see your friends\' too!':
+        'اپنا ریپڈ شیئر کریں اور دوستوں کا بھی دیکھیں!',
+    'My Bijli Wrapped for {0} ⚡ #BijliKab': '{0} کا میرا بجلی ریپڈ ⚡ #BijliKab',
+    'Share this': 'یہ شیئر کریں',
     '⚡ Light may go in {0} min': '⚡ {0} منٹ میں لائٹ جا سکتی ہے',
     '{0}: expected {1} – {2}. Charge your phone & fill water!':
         '{0}: {1} – {2} کا امکان۔ فون چارج کریں اور پانی بھر لیں!',
@@ -711,10 +1065,28 @@ const Map<String, Map<String, String>> kTranslations = {
     'Neighbours just reported the power is back.':
         'پڑوسیوں نے ابھی لائٹ آنے کی رپورٹ کی۔',
     '📝 Before the light goes': '📝 لائٹ جانے سے پہلے',
+    '🔋 UPS should be fully charged': '🔋 یو پی ایس فل چارج ہو گیا ہوگا',
+    'The light has been on long enough to charge your UPS.':
+        'لائٹ اتنی دیر رہی کہ یو پی ایس چارج ہو جائے۔',
+    '🔋 Running on UPS': '🔋 یو پی ایس پر چل رہا ہے',
+    'Your UPS should last about {0} with your usual load.':
+        'آپ کے عام لوڈ پر یو پی ایس تقریباً {0} چلے گا۔',
+    '🚰 Light is back — run the water pump': '🚰 لائٹ آ گئی — موٹر چلا لیں',
+    '{0}: fill the tank while there is power.':
+        '{0}: لائٹ ہوتے ہوئے ٹینکی بھر لیں۔',
+    '🚰 Tank should be full': '🚰 ٹینکی بھر گئی ہوگی',
+    'Switch off the water pump.': 'موٹر بند کر دیں۔',
+    '🚰 Light gone — pump stopped': '🚰 لائٹ چلی گئی — موٹر رک گئی',
+    'The tank timer was cancelled. Start it again when the light is back.':
+        'ٹینکی کا ٹائمر بند ہو گیا۔ لائٹ آنے پر دوبارہ چلائیں۔',
+    '💡✅ Light is back!': '💡✅ لائٹ آ گئی!',
+    'This is how alerts will sound.': 'الرٹس ایسی آواز میں آئیں گے۔',
     'Know when the light will go — before it goes! ⚡ Try Bijli Kab?':
         'لائٹ کب جائے گی — جانے سے پہلے جانیں! ⚡ Bijli Kab? آزمائیں',
     'Back ~{0}': 'واپسی ~{0}',
     'Updated {0}': 'اپڈیٹ {0}',
+    'I check the light with Bijli Kab? ⚡ Follow my area with code {0} (More → Invite friends → Enter code).':
+        'میں Bijli Kab? سے لائٹ چیک کرتا ہوں ⚡ میرا علاقہ کوڈ {0} سے فالو کریں (مزید ← دوستوں کو بلائیں ← کوڈ ڈالیں)۔',
     'Charge phone & power bank': 'فون اور پاور بینک چارج کریں',
     'Fill the water tank': 'پانی کی ٹینکی بھر لیں',
     'Iron tomorrow\'s clothes': 'کل کے کپڑے استری کر لیں',
@@ -724,6 +1096,21 @@ const Map<String, Map<String, String>> kTranslations = {
     'Your areas': 'آپ کے علاقے',
     'Add another area': 'ایک اور علاقہ شامل کریں',
     'Alerts & widget': 'الرٹس اور ویجیٹ',
+    'Andaza Lagao!': 'اندازہ لگاؤ!',
+    'Guess when the light comes back. Closer guess = more points!':
+        'اندازہ لگائیں لائٹ کب آئے گی۔ جتنا قریب، اتنے زیادہ پوائنٹس!',
+    'Your guess: {0}. Points when the light comes back.':
+        'آپ کا اندازہ: {0}۔ لائٹ آنے پر پوائنٹس ملیں گے۔',
+    'Other time': 'کوئی اور وقت',
+    'Guess saved: {0} 🎯': 'اندازہ محفوظ: {0} 🎯',
+    'Light came back at {0}': 'لائٹ {0} پر آئی',
+    'Your guess came too late to count (less than 10 min before).':
+        'آپ کا اندازہ دیر سے تھا، شمار نہیں ہوا (10 منٹ سے کم پہلے)۔',
+    'Exactly right! +{0} points': 'بالکل درست! +{0} پوائنٹس',
+    'You were {0} off. +{1} points': 'آپ {0} سے چوکے۔ +{1} پوائنٹس',
+    'Area mood': 'علاقے کا موڈ',
+    '{0} people · last 3h': '{0} لوگ · پچھلے 3 گھنٹے',
+    'Light aa gayi! 🎉': 'لائٹ آ گئی! 🎉',
     'Thanks! You can report again in {0}':
         'شکریہ! دوبارہ رپورٹ {0} میں کر سکتے ہیں',
     'Light is back?': 'لائٹ آ گئی؟',
@@ -737,23 +1124,48 @@ const Map<String, Map<String, String>> kTranslations = {
         'آپ نے سب سے پہلے علاقے کو بتایا۔ پڑوسیوں کو خبر دی جا رہی ہے۔',
     'Your report makes the forecast better for everyone.':
         'آپ کی رپورٹ سے سب کی پیشگوئی بہتر ہوتی ہے۔',
-    'points': 'پوائنٹس',
     'Level up! You are now {0} {1}': 'لیول اپ! اب آپ {0} {1} ہیں',
     'New badge!': 'نیا بیج!',
     'Done': 'ٹھیک ہے',
+    'First Report': 'پہلی رپورٹ',
+    'Send your first report': 'اپنی پہلی رپورٹ بھیجیں',
     'Regular': 'باقاعدہ',
     'Send 10 reports': '10 رپورٹس بھیجیں',
     'Dedicated': 'پکا رپورٹر',
     'Send 50 reports': '50 رپورٹس بھیجیں',
+    'Century': 'سنچری',
+    'Send 100 reports': '100 رپورٹس بھیجیں',
+    'Pehla Khabri': 'پہلا خبری',
+    'Be first to report a change': 'تبدیلی سب سے پہلے بتائیں',
+    'News Breaker': 'بریکنگ نیوز',
+    'Be first to report 5 times': '5 بار سب سے پہلے بتائیں',
+    'Night Owl': 'رات کا الو',
+    'Report between midnight and 5 am': 'رات 12 سے صبح 5 کے بیچ رپورٹ کریں',
+    'Detective': 'جاسوس',
+    'Add details (low voltage, transformer…) 5 times':
+        '5 بار تفصیل لکھیں (کم وولٹیج، ٹرانسفارمر…)',
+    'On Fire': 'آگ لگا دی',
+    'Report 3 days in a row': 'لگاتار 3 دن رپورٹ کریں',
+    'Unstoppable': 'نہ رکنے والا',
+    'Report 7 days in a row': 'لگاتار 7 دن رپورٹ کریں',
     'Family Watch': 'فیملی واچ',
     'Follow 3 areas': '3 علاقے فالو کریں',
+    'Spread the Word': 'بات پھیلائیں',
+    'Share your stats or the app': 'اپنے اعداد یا ایپ شیئر کریں',
+    'Sharp Shooter': 'پکا نشانچی',
+    'Win 3 guess games': '3 اندازہ گیمز جیتیں',
+    'Challenge Champion': 'چیلنج چیمپئن',
+    'Complete 5 weekly challenges': '5 ہفتہ وار چیلنج مکمل کریں',
+    'Yaaron ka Yaar': 'یاروں کا یار',
+    'Invite friends 3 times': '3 بار دوستوں کو بلائیں',
+    'Bijli Legend': 'بجلی لیجنڈ',
+    'Reach 3000 points': '3000 پوائنٹس تک پہنچیں',
     'Newcomer': 'نیا',
     'Spark': 'چنگاری',
     'Reporter': 'رپورٹر',
     'Street Watch': 'گلی کا پہرے دار',
     'Mohalla Hero': 'محلہ ہیرو',
     'Power Guru': 'پاور گرو',
-    'Bijli Legend': 'بجلی لیجنڈ',
     'Ceiling fan': 'پنکھا',
     'LED bulb': 'ایل ای ڈی بلب',
     'Tube light': 'ٹیوب لائٹ',
@@ -766,17 +1178,35 @@ const Map<String, Map<String, String>> kTranslations = {
     'Water pump': 'پانی کی موٹر',
     'Iron': 'استری',
     'Inverter AC (1 ton)': 'انورٹر اے سی (1 ٹن)',
+    'Send {0} reports': '{0} رپورٹس بھیجیں',
+    'Be first to report {0} times': '{0} بار سب سے پہلے بتائیں',
+    'Report on {0} different days': '{0} الگ دنوں میں رپورٹ کریں',
+    'Win {0} guess game': '{0} اندازہ گیم جیتیں',
+    'Win {0} guess games': '{0} اندازہ گیمز جیتیں',
+    'Share {0} time': '{0} بار شیئر کریں',
+    'Add a detail to {0} reports': '{0} رپورٹس میں تفصیل لکھیں',
+    'React to your area\'s mood {0} times': 'علاقے کے موڈ پر {0} بار ردعمل دیں',
     'Turn on location (GPS) and try again':
         'لوکیشن (GPS) آن کر کے دوبارہ کوشش کریں',
     'Location permission denied. You can pick your area on the map instead.':
         'لوکیشن کی اجازت نہیں ملی۔ نقشے پر علاقہ چن سکتے ہیں۔',
     'Could not get your location. Try again outside or pick on the map.':
         'مقام نہیں ملا۔ باہر جا کر دوبارہ کوشش کریں یا نقشے پر چنیں۔',
+    'Challenges': 'چیلنجز',
+    'UPS backup': 'یو پی ایس بیک اپ',
+    'Solar planner': 'سولر پلانر',
+    'Bill estimate': 'بل کا اندازہ',
+    'Pump timer': 'موٹر ٹائمر',
+    'Share app': 'ایپ شیئر کریں',
+    'Rate us': 'ریٹنگ دیں',
+    'K-Electric (Karachi)': 'کے الیکٹرک (کراچی)',
+    'India (national power helpline)': 'بھارت (قومی بجلی ہیلپ لائن)',
     'You tap': 'آپ ٹیپ کرتے ہیں',
     'Light Gayi or Light Aayi — takes one second.':
         'لائٹ گئی یا لائٹ آئی — صرف ایک سیکنڈ۔',
     'Neighbours confirm': 'پڑوسی تصدیق کرتے ہیں',
-    'Reports from the same ~1 km area are combined. A single wrong tap is out-voted.': 'ایک ہی ~1 کلومیٹر علاقے کی رپورٹس ملا دی جاتی ہیں۔ ایک غلط ٹیپ باقی ووٹوں سے ہار جاتا ہے۔',
+    'Reports from the same ~1 km area are combined. A single wrong tap is out-voted.':
+        'ایک ہی ~1 کلومیٹر علاقے کی رپورٹس ملا دی جاتی ہیں۔ ایک غلط ٹیپ باقی ووٹوں سے ہار جاتا ہے۔',
     'The app learns': 'ایپ سیکھتی ہے',
     'After a few days it learns when cuts usually happen in your area.':
         'چند دن میں سیکھ جاتی ہے کہ آپ کے علاقے میں لائٹ اکثر کب جاتی ہے۔',
@@ -785,10 +1215,27 @@ const Map<String, Map<String, String>> kTranslations = {
         'لائٹ جانے سے پہلے اور واپس آنے پر الرٹس۔',
     'No phone number, email or real name needed.':
         'فون نمبر، ای میل یا اصل نام کی ضرورت نہیں۔',
-    'Your exact location never leaves the phone — only the ~1 km area code is sent with a report.': 'آپ کا اصل مقام فون سے باہر نہیں جاتا — رپورٹ کے ساتھ صرف ~1 کلومیٹر علاقے کا کوڈ جاتا ہے۔',
-    'Your nickname and points are public on the leaderboard; use any name you like.': 'آپ کا نک نیم اور پوائنٹس لیڈر بورڈ پر سب دیکھ سکتے ہیں؛ کوئی بھی نام رکھیں۔',
+    'Your exact location never leaves the phone — only the ~1 km area code is sent with a report.':
+        'آپ کا اصل مقام فون سے باہر نہیں جاتا — رپورٹ کے ساتھ صرف ~1 کلومیٹر علاقے کا کوڈ جاتا ہے۔',
+    'Your nickname and points are public on the leaderboard; use any name you like.':
+        'آپ کا نک نیم اور پوائنٹس لیڈر بورڈ پر سب دیکھ سکتے ہیں؛ کوئی بھی نام رکھیں۔',
     'No ads, no trackers. Delete everything any time from Settings.':
         'نہ اشتہار، نہ ٹریکر۔ سیٹنگز سے کبھی بھی سب مٹا دیں۔',
+    'One-tap reports': 'ایک ٹیپ رپورٹ',
+    'Light gayi? Light aayi? Tell your area in one second.':
+        'لائٹ گئی؟ لائٹ آئی؟ ایک سیکنڈ میں علاقے کو بتائیں۔',
+    'Smart forecast': 'سمارٹ پیشگوئی',
+    'Learns your area\'s loadshedding pattern and predicts the next cut.':
+        'علاقے کی لوڈشیڈنگ کا پیٹرن سیکھ کر اگلی بار بتاتا ہے۔',
+    'Get warned before the cut — charge the phone, fill the water.':
+        'لائٹ جانے سے پہلے خبر — فون چارج، پانی بھر لیں۔',
+    'See which areas around you have light right now.':
+        'دیکھیں آس پاس کہاں ابھی لائٹ ہے۔',
+    'Points & badges': 'پوائنٹس اور بیجز',
+    'Climb the leaderboard and become the Mohalla Hero.':
+        'لیڈر بورڈ پر اوپر جائیں اور محلہ ہیرو بنیں۔',
+    'UPS backup, solar planner and bill estimate.':
+        'یو پی ایس بیک اپ، سولر پلانر اور بل کا اندازہ۔',
     'Neon Volt': 'نیون وولٹ',
     'Midnight Blue': 'آدھی رات نیلا',
     'Pure Black': 'خالص سیاہ',
@@ -808,55 +1255,17 @@ const Map<String, Map<String, String>> kTranslations = {
     'Fri': 'جمعہ',
     'Sat': 'ہفتہ',
     'Sun': 'اتوار',
-    'First Report': 'پہلی رپورٹ',
-    'Send your first report': 'اپنی پہلی رپورٹ بھیجیں',
-    'Century': 'سنچری',
-    'Send 100 reports': '100 رپورٹس بھیجیں',
-    'Pehla Khabri': 'پہلا خبری',
-    'Be first to report a change': 'تبدیلی سب سے پہلے بتائیں',
-    'News Breaker': 'بریکنگ نیوز',
-    'Be first to report 5 times': '5 بار سب سے پہلے بتائیں',
-    'Night Owl': 'رات کا الو',
-    'Report between midnight and 5 am': 'رات 12 سے صبح 5 کے بیچ رپورٹ کریں',
-    'Detective': 'جاسوس',
-    'Add details (low voltage, transformer…) 5 times':
-        '5 بار تفصیل لکھیں (کم وولٹیج، ٹرانسفارمر…)',
-    'On Fire': 'آگ لگا دی',
-    'Report 3 days in a row': 'لگاتار 3 دن رپورٹ کریں',
-    'Unstoppable': 'نہ رکنے والا',
-    'Report 7 days in a row': 'لگاتار 7 دن رپورٹ کریں',
-    'Spread the Word': 'بات پھیلائیں',
-    'Share your stats or the app': 'اپنے اعداد یا ایپ شیئر کریں',
-    'Reach 3000 points': '3000 پوائنٹس تک پہنچیں',
-    'UPS backup': 'یو پی ایس بیک اپ',
-    'Solar planner': 'سولر پلانر',
-    'Bill estimate': 'بل کا اندازہ',
-    'Share app': 'ایپ شیئر کریں',
-    'Rate us': 'ریٹنگ دیں',
-    'One-tap reports': 'ایک ٹیپ رپورٹ',
-    'Light gayi? Light aayi? Tell your area in one second.':
-        'لائٹ گئی؟ لائٹ آئی؟ ایک سیکنڈ میں علاقے کو بتائیں۔',
-    'Smart forecast': 'سمارٹ پیشگوئی',
-    'Learns your area\'s loadshedding pattern and predicts the next cut.':
-        'علاقے کی لوڈشیڈنگ کا پیٹرن سیکھ کر اگلی بار بتاتا ہے۔',
-    'Get warned before the cut — charge the phone, fill the water.':
-        'لائٹ جانے سے پہلے خبر — فون چارج، پانی بھر لیں۔',
-    'See which areas around you have light right now.':
-        'دیکھیں آس پاس کہاں ابھی لائٹ ہے۔',
-    'Points & badges': 'پوائنٹس اور بیجز',
-    'Climb the leaderboard and become the Mohalla Hero.':
-        'لیڈر بورڈ پر اوپر جائیں اور محلہ ہیرو بنیں۔',
-    'UPS backup, solar planner and bill estimate.':
-        'یو پی ایس بیک اپ، سولر پلانر اور بل کا اندازہ۔',
     'On': 'آن',
     'Off': 'آف',
     'Expected': 'امکان',
+    'Pakistan (LESCO, IESCO, FESCO, MEPCO, GEPCO, PESCO, HESCO…)':
+        'پاکستان (LESCO، IESCO، FESCO، MEPCO، GEPCO، PESCO، HESCO…)',
   },
   'hi': {
-    '1h': '1 घंटा',
-    '1h {1}m': '1 घंटा {1} मि',
     'just now': 'अभी अभी',
     '{0}m': '{0} मि',
+    '1h': '1 घंटा',
+    '1h {1}m': '1 घंटा {1} मि',
     '{0}h': '{0} घंटे',
     '{0}h {1}m': '{0} घं {1} मि',
     '{0}d': '{0} दिन',
@@ -875,6 +1284,8 @@ const Map<String, Map<String, String>> kTranslations = {
     'Transformer fault': 'ट्रांसफ़ॉर्मर ख़राब',
     'Scheduled loadshedding': 'तय बिजली कटौती',
     'Wire / cable fault': 'तार / केबल ख़राब',
+    'Challenge complete!': 'चैलेंज पूरा!',
+    'points': 'पॉइंट',
     'Know before the light goes': 'लाइट जाने से पहले जानें',
     'Forecasts are estimates from community reports, not official information.':
         'पूर्वानुमान लोगों की रिपोर्ट का अंदाज़ा है, सरकारी जानकारी नहीं।',
@@ -893,7 +1304,8 @@ const Map<String, Map<String, String>> kTranslations = {
     'Save this area': 'यह इलाका सेव करें',
     'Choose your area': 'अपना इलाका चुनें',
     'Add area': 'इलाका जोड़ें',
-    'Follow your home, office, school or family. The first area (★) gets alerts and the home-screen widget.': 'घर, ऑफ़िस, स्कूल या परिवार को फ़ॉलो करें। पहले इलाके (★) के अलर्ट और होम-स्क्रीन विजेट आते हैं।',
+    'Follow your home, office, school or family. The first area (★) gets alerts and the home-screen widget.':
+        'घर, ऑफ़िस, स्कूल या परिवार को फ़ॉलो करें। पहले इलाके (★) के अलर्ट और होम-स्क्रीन विजेट आते हैं।',
     'You need at least one area.': 'कम से कम एक इलाका ज़रूरी है।',
     'Make main area (★)': 'मुख्य इलाका बनाएँ (★)',
     'Rename': 'नाम बदलें',
@@ -913,6 +1325,13 @@ const Map<String, Map<String, String>> kTranslations = {
     '{0} points': '{0} पॉइंट',
     'Badges': 'बैज',
     'Levels': 'लेवल',
+    '{0} of {1} done this week': 'इस हफ़्ते {1} में से {0} पूरे',
+    'New challenges in {0} days {1} hours': 'नए चैलेंज {0} दिन {1} घंटे में',
+    'Completed so far: {0}': 'अब तक पूरे: {0}',
+    'Challenges are the same for everyone and change every Monday. Rewards are added automatically.':
+        'चैलेंज सबके लिए एक जैसे हैं और हर सोमवार बदलते हैं। इनाम ख़ुद मिल जाता है।',
+    'Reward: +{0} points': 'इनाम: +{0} पॉइंट',
+    'Weekly challenges': 'हफ़्ते के चैलेंज',
     'Untick all': 'सब हटाएँ',
     'All set! Let it go 😎': 'सब तैयार! अब जाए तो जाए 😎',
     'Get ready for the cut': 'लाइट जाने की तैयारी करें',
@@ -922,6 +1341,29 @@ const Map<String, Map<String, String>> kTranslations = {
     'Add your own item…': 'अपनी चीज़ लिखें…',
     'Before the light goes': 'लाइट जाने से पहले',
     'Checklist': 'चेकलिस्ट',
+    'since {0}': '{0} से',
+    'No electricity in our area.': 'हमारे इलाके में बिजली नहीं है।',
+    'Area': 'इलाका',
+    'Reference no.': 'रेफ़रेंस नंबर',
+    'Could not open the phone app.': 'फ़ोन ऐप नहीं खुली।',
+    'Light gone for too long? Complain in one tap.':
+        'लाइट बहुत देर से गई है? एक टैप में शिकायत करें।',
+    'Call {0}': '{0} पर कॉल',
+    'SMS': 'SMS',
+    'Helpline number (from your bill)': 'हेल्पलाइन नंबर (बिल से)',
+    'Reference / consumer number (optional)':
+        'रेफ़रेंस / उपभोक्ता नंबर (ज़रूरी नहीं)',
+    'Add': 'जोड़ें',
+    'Got a complaint number from the helpline? Save it here so you can follow up.':
+        'हेल्पलाइन से शिकायत नंबर मिला? यहाँ सेव करें ताकि बाद में पूछ सकें।',
+    'Complaint': 'शिकायत',
+    'Check the helpline number printed on your electricity bill — it can differ by company.':
+        'अपने बिजली बिल पर छपा हेल्पलाइन नंबर देख लें — हर कंपनी का अलग हो सकता है।',
+    'Save complaint': 'शिकायत सेव करें',
+    'Complaint number': 'शिकायत नंबर',
+    'Note (optional)': 'नोट (ज़रूरी नहीं)',
+    'Helpline': 'हेल्पलाइन',
+    'My complaints': 'मेरी शिकायतें',
     'Forecast': 'पूर्वानुमान',
     'Learning your area…': 'आपका इलाका सीख रहे हैं…',
     'No cut expected in 24h 🎉': '24 घंटे में लाइट जाने की उम्मीद नहीं 🎉',
@@ -929,13 +1371,14 @@ const Map<String, Map<String, String>> kTranslations = {
     'Based on {0} days of neighbour reports':
         'पड़ोसियों की {0} दिन की रिपोर्ट पर आधारित',
     'official schedule': 'सरकारी शेड्यूल',
-    'Forecasts start after ~2 days of reports. Keep tapping Light Gayi / Light Aayi — or add the official schedule below.': 'पूर्वानुमान ~2 दिन की रिपोर्ट के बाद शुरू होता है। लाइट गई / लाइट आई दबाते रहें — या नीचे सरकारी शेड्यूल डालें।',
+    'Forecasts start after ~2 days of reports. Keep tapping Light Gayi / Light Aayi — or add the official schedule below.':
+        'पूर्वानुमान ~2 दिन की रिपोर्ट के बाद शुरू होता है। लाइट गई / लाइट आई दबाते रहें — या नीचे सरकारी शेड्यूल डालें।',
     'Nothing expected. Enjoy the light! (We will warn you if that changes.)':
         'कुछ उम्मीद नहीं। लाइट का मज़ा लें! (बदला तो हम बता देंगे।)',
     'Darker red = more likely. Learned from the last 4 weeks.':
         'गहरा लाल = ज़्यादा संभावना। पिछले 4 हफ़्तों से सीखा।',
-    'Add': 'जोड़ें',
-    'Got a loadshedding schedule from your electricity company? Add it here and it will be used in the forecast and alerts.': 'बिजली कंपनी का कटौती शेड्यूल मिला है? यहाँ डालें, पूर्वानुमान और अलर्ट में इस्तेमाल होगा।',
+    'Got a loadshedding schedule from your electricity company? Add it here and it will be used in the forecast and alerts.':
+        'बिजली कंपनी का कटौती शेड्यूल मिला है? यहाँ डालें, पूर्वानुमान और अलर्ट में इस्तेमाल होगा।',
     'Before-the-cut checklist': 'लाइट जाने से पहले की चेकलिस्ट',
     'Get a reminder 30 min before the next cut':
         'अगली बार लाइट जाने से 30 मिनट पहले रिमाइंडर',
@@ -982,6 +1425,27 @@ const Map<String, Map<String, String>> kTranslations = {
     'From the official schedule': 'सरकारी शेड्यूल से',
     '{0} chance · learned from your area': '{0} संभावना · आपके इलाके से सीखा',
     'Coming up': 'आगे क्या है',
+    'More neighbours = more accurate light status':
+        'ज़्यादा पड़ोसी = ज़्यादा सही लाइट का हाल',
+    'Invite your street and family. They can follow your area with your code.':
+        'गली वालों और परिवार को बुलाएँ। वे आपके कोड से आपका इलाका फ़ॉलो कर सकते हैं।',
+    'Your area code': 'आपके इलाके का कोड',
+    'Code copied': 'कोड कॉपी हो गया',
+    'Invite on WhatsApp & more': 'WhatsApp वग़ैरह पर बुलाएँ',
+    'Invites sent: {0}': 'भेजे गए इनवाइट: {0}',
+    'Follow your friend\'s or family\'s area.':
+        'दोस्त या परिवार का इलाका फ़ॉलो करें।',
+    'Follow their area — and get +20 welcome points the first time!':
+        'उनका इलाका फ़ॉलो करें — और पहली बार +20 वेलकम पॉइंट पाएँ!',
+    '6-letter code': '6 अक्षर का कोड',
+    'Area added to your list 🤝': 'इलाका आपकी लिस्ट में जुड़ गया 🤝',
+    'You already follow this area.': 'आप यह इलाका पहले से फ़ॉलो करते हैं।',
+    'That code doesn\'t look right. It has 6 letters/numbers.':
+        'यह कोड सही नहीं लग रहा। इसमें 6 अक्षर/अंक होते हैं।',
+    'The code only shows the ~1 km area, never your exact home.':
+        'कोड सिर्फ़ ~1 किमी इलाका बताता है, आपका असली घर कभी नहीं।',
+    'Invite friends': 'दोस्तों को बुलाएँ',
+    'Got a code from a friend?': 'दोस्त से कोड मिला?',
     'Everyone': 'सब लोग',
     'My city': 'मेरा शहर',
     'Could not load the leaderboard. Check your internet.':
@@ -990,6 +1454,16 @@ const Map<String, Map<String, String>> kTranslations = {
     'You': 'आप',
     '{0} reports': '{0} रिपोर्ट',
     'Leaderboard': 'लीडरबोर्ड',
+    'Unlock Bijli Kab?': 'Bijli Kab? खोलें',
+    'Wrong PIN, try again': 'ग़लत PIN, फिर कोशिश करें',
+    'Enter your PIN': 'अपना PIN डालें',
+    'App Lock is on 🔒': 'ऐप लॉक चालू हो गया 🔒',
+    'PINs did not match. Start again.': 'PIN मेल नहीं खाए। फिर से शुरू करें।',
+    'Choose a 4-digit PIN': '4 अंकों का PIN चुनें',
+    'Enter the same PIN again': 'वही PIN फिर डालें',
+    'You can turn this off any time in Settings.':
+        'इसे सेटिंग से कभी भी बंद कर सकते हैं।',
+    'App Lock': 'ऐप लॉक',
     'Could not load the map. Check your internet.':
         'नक्शा लोड नहीं हुआ। इंटरनेट चेक करें।',
     'Live map': 'लाइव नक्शा',
@@ -1010,6 +1484,20 @@ const Map<String, Map<String, String>> kTranslations = {
     'first reports': 'पहली रिपोर्ट',
     'badges': 'बैज',
     'Features': 'फ़ीचर',
+    'until the tank is full': 'टंकी भरने तक',
+    'to fill the tank': 'टंकी भरने में',
+    'Tank fills in {0} minutes': 'टंकी {0} मिनट में भरती है',
+    'Start pump timer': 'मोटर टाइमर शुरू करें',
+    'The light seems to be off in your main area — the pump may not run.':
+        'लगता है मुख्य इलाके में लाइट नहीं — मोटर शायद न चले।',
+    'Stop timer': 'टाइमर बंद करें',
+    'So you can fill the tank while there is power':
+        'ताकि लाइट रहते टंकी भर लें',
+    'If the light goes while the timer runs, you get a notification and the timer stops.':
+        'टाइमर के दौरान लाइट गई तो नोटिफ़िकेशन आएगा और टाइमर रुक जाएगा।',
+    'Water pump timer': 'पानी की मोटर का टाइमर',
+    'Reminders': 'रिमाइंडर',
+    'Remind me when the light comes back': 'लाइट आने पर याद दिलाएँ',
     'Continue': 'आगे बढ़ें',
     'Let\'s start': 'चलो शुरू करें',
     'Know when the light will go — before it goes.':
@@ -1018,7 +1506,8 @@ const Map<String, Map<String, String>> kTranslations = {
         'पड़ोसियों की मदद से चलता है। आपका एक टैप पूरी गली के काम आता है।',
     'Everything in one app': 'सब कुछ एक ऐप में',
     'Where is your home?': 'आपका घर कहाँ है?',
-    'We only use it to know your area (~1 km). Your exact location stays on your phone.': 'सिर्फ़ इलाका (~1 किमी) जानने के लिए। आपकी असली लोकेशन आपके फ़ोन में ही रहती है।',
+    'We only use it to know your area (~1 km). Your exact location stays on your phone.':
+        'सिर्फ़ इलाका (~1 किमी) जानने के लिए। आपकी असली लोकेशन आपके फ़ोन में ही रहती है।',
     'Ghar': 'घर',
     'Pick your reporter name': 'अपना रिपोर्टर नाम चुनें',
     'Shown on the leaderboard. Any nickname works.':
@@ -1029,12 +1518,33 @@ const Map<String, Map<String, String>> kTranslations = {
     'We will warn you 15 minutes before a likely cut and tell you when the light comes back.':
         'लाइट जाने से 15 मिनट पहले बता देंगे और वापस आने पर भी।',
     'Nickname (shown on leaderboard)': 'निकनेम (लीडरबोर्ड पर दिखेगा)',
+    'areas in the dark now': 'इलाके अभी अँधेरे में',
+    'areas with light': 'इलाकों में लाइट है',
+    'Share ranking': 'रैंकिंग शेयर करें',
+    'Longest in the dark right now': 'अभी सबसे ज़्यादा देर से अँधेरा',
+    'Everyone nearby has light right now 🎉': 'अभी आस-पास सबके पास लाइट है 🎉',
+    'Based on the latest reports in each area around you.':
+        'आस-पास हर इलाके की ताज़ा रिपोर्ट के आधार पर।',
+    'Area ranking': 'इलाकों की रैंकिंग',
+    'Most active areas': 'सबसे सक्रिय इलाके',
     'Based on the forecast for your main area':
         'मुख्य इलाके के पूर्वानुमान के अनुसार',
     '{0} min before': '{0} मिनट पहले',
     'When neighbours report a change': 'जब पड़ोसी बदलाव बताएँ',
     '30 min before the next cut': 'अगली बार लाइट जाने से 30 मिनट पहले',
     'No alerts from 11 pm to 7 am': 'रात 11 से सुबह 7 तक कोई अलर्ट नहीं',
+    'Confetti and a sound in the app': 'ऐप में कॉन्फ़ेटी और आवाज़',
+    'Always see light ON/OFF and the next cut':
+        'हमेशा देखें लाइट है या नहीं और अगली बार कब',
+    'Backup time when the light goes, "fully charged" later':
+        'लाइट जाने पर बैकअप का समय, बाद में "फ़ुल चार्ज"',
+    'Full in {0}h': '{0} घंटे में फ़ुल',
+    'When the light comes back': 'जब लाइट वापस आए',
+    'PIN needed to open the app': 'ऐप खोलने के लिए PIN चाहिए',
+    'Off — the app opens without a password':
+        'बंद — ऐप बिना पासवर्ड के खुलता है',
+    'Use the phone\'s fingerprint instead of the PIN':
+        'PIN की जगह फ़ोन का फ़िंगरप्रिंट',
     'Haptic feedback on taps': 'टैप पर हल्का वाइब्रेशन',
     '{0} followed': '{0} फ़ॉलो किए',
     'Reports are shared live with your neighbours':
@@ -1042,12 +1552,21 @@ const Map<String, Map<String, String>> kTranslations = {
     'Simulated neighbours. The developer must connect Firebase to go live.':
         'नकली पड़ोसी। लाइव करने के लिए डेवलपर को Firebase जोड़ना होगा।',
     'Delete everything stored on this phone': 'इस फ़ोन में सेव सब कुछ मिटा दें',
+    'Chime': 'चाइम',
+    'Bell': 'घंटी',
+    'Siren': 'सायरन',
+    'Horn': 'हॉर्न',
+    'Phone default': 'फ़ोन की अपनी',
+    'Alert sound': 'अलर्ट की आवाज़',
     'Language': 'भाषा',
     'Reset app?': 'ऐप रीसेट करें?',
-    'Your areas, points, settings and checklist on this phone will be deleted. Reports you already sent stay with the community.': 'इस फ़ोन से आपके इलाके, पॉइंट, सेटिंग और चेकलिस्ट मिट जाएँगे। भेजी गई रिपोर्ट समुदाय के पास रहेंगी।',
+    'Your areas, points, settings and checklist on this phone will be deleted. Reports you already sent stay with the community.':
+        'इस फ़ोन से आपके इलाके, पॉइंट, सेटिंग और चेकलिस्ट मिट जाएँगे। भेजी गई रिपोर्ट समुदाय के पास रहेंगी।',
     'Reset': 'रीसेट',
     'Settings': 'सेटिंग',
     'Alerts': 'अलर्ट',
+    'Extras': 'अतिरिक्त',
+    'Security': 'सुरक्षा',
     'Look & feel': 'रूप-रंग',
     'Data': 'डेटा',
     'About': 'जानकारी',
@@ -1055,6 +1574,12 @@ const Map<String, Map<String, String>> kTranslations = {
     'Light gone / back alerts': 'लाइट गई / आई अलर्ट',
     'Checklist reminder': 'चेकलिस्ट रिमाइंडर',
     'Quiet hours': 'शांत समय',
+    'Celebrate when light comes back': 'लाइट आने पर जश्न',
+    'Status in notification bar': 'नोटिफ़िकेशन बार में हाल',
+    'UPS reminders': 'UPS रिमाइंडर',
+    'Water pump reminder': 'मोटर रिमाइंडर',
+    'Fingerprint / face unlock': 'फ़िंगरप्रिंट / चेहरे से खोलें',
+    'Change PIN': 'PIN बदलें',
     'Theme': 'थीम',
     'Vibration': 'वाइब्रेशन',
     'Profile': 'प्रोफ़ाइल',
@@ -1122,12 +1647,40 @@ const Map<String, Map<String, String>> kTranslations = {
     'Price per unit (from your bill)': 'प्रति यूनिट दाम (बिल से)',
     'Fixed charges / meter rent': 'तय शुल्क / मीटर किराया',
     'Taxes: {0}%': 'टैक्स: {0}%',
-    'Tariffs change often — copy the per-unit price and taxes from your latest bill for an accurate estimate.': 'दरें बदलती रहती हैं — सही अंदाज़े के लिए नए बिल से प्रति यूनिट दाम और टैक्स लिखें।',
+    'Tariffs change often — copy the per-unit price and taxes from your latest bill for an accurate estimate.':
+        'दरें बदलती रहती हैं — सही अंदाज़े के लिए नए बिल से प्रति यूनिट दाम और टैक्स लिखें।',
     'Power tools': 'पावर टूल्स',
     'Battery': 'बैटरी',
     'What will you run?': 'क्या-क्या चलाएँगे?',
     'Load': 'लोड',
     'Your numbers': 'आपका हिसाब',
+    'Bijli Wrapped': 'बिजली रैप्ड',
+    'Coming soon': 'जल्द आ रहा है',
+    'Your Wrapped is ready after 3 days of reports in your area. Keep reporting!':
+        'आपका रैप्ड इलाके की 3 दिन की रिपोर्ट के बाद तैयार होगा। रिपोर्ट करते रहें!',
+    'Your last 4 weeks with the light. Tap to continue →':
+        'लाइट के साथ आपके पिछले 4 हफ़्ते। आगे के लिए टैप करें →',
+    'Total time without light': 'कुल समय बिना लाइट',
+    'That\'s {0} full days in the dark.': 'यानी {0} पूरे दिन अँधेरे में।',
+    'Power cuts': 'कितनी बार लाइट गई',
+    'The longest one lasted {0}.': 'सबसे लंबी {0} चली।',
+    'Worst hour': 'सबसे बुरा समय',
+    'The light went most often around this time.':
+        'इस समय लाइट सबसे ज़्यादा गई।',
+    'Last 2 weeks vs before': 'पिछले 2 हफ़्ते बनाम पहले',
+    'Less loadshedding lately. 🙏': 'आजकल कटौती कम है। 🙏',
+    'More loadshedding lately. 😤': 'आजकल कटौती ज़्यादा है। 😤',
+    'Best day': 'सबसे अच्छा दिन',
+    '{0} — only {1} without light.': '{0} — सिर्फ़ {1} बिना लाइट।',
+    'You as a reporter': 'आप रिपोर्टर के रूप में',
+    '{0} reports · {1} first reports · {2} badges · {3} guesses won':
+        '{0} रिपोर्ट · {1} पहली रिपोर्ट · {2} बैज · {3} अंदाज़े जीते',
+    'Light was on': 'लाइट रही',
+    'Share your Wrapped and see your friends\' too!':
+        'अपना रैप्ड शेयर करें और दोस्तों का भी देखें!',
+    'My Bijli Wrapped for {0} ⚡ #BijliKab':
+        '{0} का मेरा बिजली रैप्ड ⚡ #BijliKab',
+    'Share this': 'यह शेयर करें',
     '⚡ Light may go in {0} min': '⚡ {0} मिनट में लाइट जा सकती है',
     '{0}: expected {1} – {2}. Charge your phone & fill water!':
         '{0}: {1} – {2} की संभावना। फ़ोन चार्ज करें और पानी भर लें!',
@@ -1138,10 +1691,27 @@ const Map<String, Map<String, String>> kTranslations = {
     'Neighbours just reported the power is back.':
         'पड़ोसियों ने अभी लाइट आने की रिपोर्ट की।',
     '📝 Before the light goes': '📝 लाइट जाने से पहले',
+    '🔋 UPS should be fully charged': '🔋 UPS फ़ुल चार्ज हो गया होगा',
+    'The light has been on long enough to charge your UPS.':
+        'लाइट इतनी देर रही कि UPS चार्ज हो जाए।',
+    '🔋 Running on UPS': '🔋 UPS पर चल रहा है',
+    'Your UPS should last about {0} with your usual load.':
+        'आपके आम लोड पर UPS लगभग {0} चलेगा।',
+    '🚰 Light is back — run the water pump': '🚰 लाइट आ गई — मोटर चला लें',
+    '{0}: fill the tank while there is power.': '{0}: लाइट रहते टंकी भर लें।',
+    '🚰 Tank should be full': '🚰 टंकी भर गई होगी',
+    'Switch off the water pump.': 'मोटर बंद कर दें।',
+    '🚰 Light gone — pump stopped': '🚰 लाइट चली गई — मोटर रुक गई',
+    'The tank timer was cancelled. Start it again when the light is back.':
+        'टंकी का टाइमर बंद हो गया। लाइट आने पर फिर चलाएँ।',
+    '💡✅ Light is back!': '💡✅ लाइट आ गई!',
+    'This is how alerts will sound.': 'अलर्ट ऐसी आवाज़ में आएँगे।',
     'Know when the light will go — before it goes! ⚡ Try Bijli Kab?':
         'लाइट कब जाएगी — जाने से पहले जानें! ⚡ Bijli Kab? आज़माएँ',
     'Back ~{0}': 'वापसी ~{0}',
     'Updated {0}': 'अपडेट {0}',
+    'I check the light with Bijli Kab? ⚡ Follow my area with code {0} (More → Invite friends → Enter code).':
+        'मैं Bijli Kab? से लाइट चेक करता हूँ ⚡ मेरा इलाका कोड {0} से फ़ॉलो करें (और → दोस्तों को बुलाएँ → कोड डालें)।',
     'Charge phone & power bank': 'फ़ोन और पावर बैंक चार्ज करें',
     'Fill the water tank': 'पानी की टंकी भर लें',
     'Iron tomorrow\'s clothes': 'कल के कपड़े प्रेस कर लें',
@@ -1151,6 +1721,21 @@ const Map<String, Map<String, String>> kTranslations = {
     'Your areas': 'आपके इलाके',
     'Add another area': 'एक और इलाका जोड़ें',
     'Alerts & widget': 'अलर्ट और विजेट',
+    'Andaza Lagao!': 'अंदाज़ा लगाओ!',
+    'Guess when the light comes back. Closer guess = more points!':
+        'अंदाज़ा लगाएँ लाइट कब आएगी। जितना क़रीब, उतने ज़्यादा पॉइंट!',
+    'Your guess: {0}. Points when the light comes back.':
+        'आपका अंदाज़ा: {0}। लाइट आने पर पॉइंट मिलेंगे।',
+    'Other time': 'कोई और समय',
+    'Guess saved: {0} 🎯': 'अंदाज़ा सेव: {0} 🎯',
+    'Light came back at {0}': 'लाइट {0} पर आई',
+    'Your guess came too late to count (less than 10 min before).':
+        'आपका अंदाज़ा देर से था, गिना नहीं गया (10 मिनट से कम पहले)।',
+    'Exactly right! +{0} points': 'बिल्कुल सही! +{0} पॉइंट',
+    'You were {0} off. +{1} points': 'आप {0} से चूके। +{1} पॉइंट',
+    'Area mood': 'इलाके का मूड',
+    '{0} people · last 3h': '{0} लोग · पिछले 3 घंटे',
+    'Light aa gayi! 🎉': 'लाइट आ गई! 🎉',
     'Thanks! You can report again in {0}':
         'शुक्रिया! दोबारा रिपोर्ट {0} में कर सकते हैं',
     'Light is back?': 'लाइट आ गई?',
@@ -1165,23 +1750,48 @@ const Map<String, Map<String, String>> kTranslations = {
         'आपने सबसे पहले इलाके को बताया। पड़ोसियों को ख़बर दी जा रही है।',
     'Your report makes the forecast better for everyone.':
         'आपकी रिपोर्ट से सबका पूर्वानुमान बेहतर होता है।',
-    'points': 'पॉइंट',
     'Level up! You are now {0} {1}': 'लेवल अप! अब आप {0} {1} हैं',
     'New badge!': 'नया बैज!',
     'Done': 'ठीक है',
+    'First Report': 'पहली रिपोर्ट',
+    'Send your first report': 'अपनी पहली रिपोर्ट भेजें',
     'Regular': 'नियमित',
     'Send 10 reports': '10 रिपोर्ट भेजें',
     'Dedicated': 'पक्का रिपोर्टर',
     'Send 50 reports': '50 रिपोर्ट भेजें',
+    'Century': 'शतक',
+    'Send 100 reports': '100 रिपोर्ट भेजें',
+    'Pehla Khabri': 'पहला ख़बरी',
+    'Be first to report a change': 'बदलाव सबसे पहले बताएँ',
+    'News Breaker': 'ब्रेकिंग न्यूज़',
+    'Be first to report 5 times': '5 बार सबसे पहले बताएँ',
+    'Night Owl': 'रात का उल्लू',
+    'Report between midnight and 5 am': 'रात 12 से सुबह 5 के बीच रिपोर्ट करें',
+    'Detective': 'जासूस',
+    'Add details (low voltage, transformer…) 5 times':
+        '5 बार जानकारी जोड़ें (कम वोल्टेज, ट्रांसफ़ॉर्मर…)',
+    'On Fire': 'आग लगा दी',
+    'Report 3 days in a row': 'लगातार 3 दिन रिपोर्ट करें',
+    'Unstoppable': 'न रुकने वाला',
+    'Report 7 days in a row': 'लगातार 7 दिन रिपोर्ट करें',
     'Family Watch': 'परिवार की नज़र',
     'Follow 3 areas': '3 इलाके फ़ॉलो करें',
+    'Spread the Word': 'बात फैलाएँ',
+    'Share your stats or the app': 'अपने आँकड़े या ऐप शेयर करें',
+    'Sharp Shooter': 'पक्का निशानेबाज़',
+    'Win 3 guess games': '3 अंदाज़ा गेम जीतें',
+    'Challenge Champion': 'चैलेंज चैंपियन',
+    'Complete 5 weekly challenges': '5 हफ़्ते के चैलेंज पूरे करें',
+    'Yaaron ka Yaar': 'यारों का यार',
+    'Invite friends 3 times': '3 बार दोस्तों को बुलाएँ',
+    'Bijli Legend': 'बिजली लीजेंड',
+    'Reach 3000 points': '3000 पॉइंट तक पहुँचें',
     'Newcomer': 'नया',
     'Spark': 'चिंगारी',
     'Reporter': 'रिपोर्टर',
     'Street Watch': 'गली का पहरेदार',
     'Mohalla Hero': 'मोहल्ला हीरो',
     'Power Guru': 'पावर गुरु',
-    'Bijli Legend': 'बिजली लीजेंड',
     'Ceiling fan': 'पंखा',
     'LED bulb': 'LED बल्ब',
     'Tube light': 'ट्यूबलाइट',
@@ -1194,17 +1804,36 @@ const Map<String, Map<String, String>> kTranslations = {
     'Water pump': 'पानी की मोटर',
     'Iron': 'प्रेस',
     'Inverter AC (1 ton)': 'इन्वर्टर AC (1 टन)',
+    'Send {0} reports': '{0} रिपोर्ट भेजें',
+    'Be first to report {0} times': '{0} बार सबसे पहले बताएँ',
+    'Report on {0} different days': '{0} अलग दिनों में रिपोर्ट करें',
+    'Win {0} guess game': '{0} अंदाज़ा गेम जीतें',
+    'Win {0} guess games': '{0} अंदाज़ा गेम जीतें',
+    'Share {0} time': '{0} बार शेयर करें',
+    'Add a detail to {0} reports': '{0} रिपोर्ट में जानकारी जोड़ें',
+    'React to your area\'s mood {0} times':
+        'इलाके के मूड पर {0} बार रिएक्ट करें',
     'Turn on location (GPS) and try again':
         'लोकेशन (GPS) चालू करके फिर कोशिश करें',
     'Location permission denied. You can pick your area on the map instead.':
         'लोकेशन की अनुमति नहीं मिली। नक्शे पर इलाका चुन सकते हैं।',
     'Could not get your location. Try again outside or pick on the map.':
         'लोकेशन नहीं मिली। बाहर जाकर फिर कोशिश करें या नक्शे पर चुनें।',
+    'Challenges': 'चैलेंज',
+    'UPS backup': 'UPS बैकअप',
+    'Solar planner': 'सोलर प्लानर',
+    'Bill estimate': 'बिल का अंदाज़ा',
+    'Pump timer': 'मोटर टाइमर',
+    'Share app': 'ऐप शेयर करें',
+    'Rate us': 'रेटिंग दें',
+    'K-Electric (Karachi)': 'K-Electric (कराची)',
+    'India (national power helpline)': 'भारत (राष्ट्रीय बिजली हेल्पलाइन)',
     'You tap': 'आप टैप करते हैं',
     'Light Gayi or Light Aayi — takes one second.':
         'लाइट गई या लाइट आई — सिर्फ़ एक सेकंड।',
     'Neighbours confirm': 'पड़ोसी पुष्टि करते हैं',
-    'Reports from the same ~1 km area are combined. A single wrong tap is out-voted.': 'एक ही ~1 किमी इलाके की रिपोर्ट मिला दी जाती हैं। एक ग़लत टैप बाक़ी वोटों से हार जाता है।',
+    'Reports from the same ~1 km area are combined. A single wrong tap is out-voted.':
+        'एक ही ~1 किमी इलाके की रिपोर्ट मिला दी जाती हैं। एक ग़लत टैप बाक़ी वोटों से हार जाता है।',
     'The app learns': 'ऐप सीखता है',
     'After a few days it learns when cuts usually happen in your area.':
         'कुछ दिनों में सीख जाता है कि आपके इलाके में लाइट अक्सर कब जाती है।',
@@ -1213,11 +1842,27 @@ const Map<String, Map<String, String>> kTranslations = {
         'लाइट जाने से पहले और वापस आने पर अलर्ट।',
     'No phone number, email or real name needed.':
         'फ़ोन नंबर, ईमेल या असली नाम की ज़रूरत नहीं।',
-    'Your exact location never leaves the phone — only the ~1 km area code is sent with a report.': 'आपकी असली लोकेशन फ़ोन से बाहर नहीं जाती — रिपोर्ट के साथ सिर्फ़ ~1 किमी इलाके का कोड जाता है।',
+    'Your exact location never leaves the phone — only the ~1 km area code is sent with a report.':
+        'आपकी असली लोकेशन फ़ोन से बाहर नहीं जाती — रिपोर्ट के साथ सिर्फ़ ~1 किमी इलाके का कोड जाता है।',
     'Your nickname and points are public on the leaderboard; use any name you like.':
         'आपका निकनेम और पॉइंट लीडरबोर्ड पर सब देख सकते हैं; कोई भी नाम रखें।',
     'No ads, no trackers. Delete everything any time from Settings.':
         'न विज्ञापन, न ट्रैकर। सेटिंग से कभी भी सब मिटा दें।',
+    'One-tap reports': 'एक टैप रिपोर्ट',
+    'Light gayi? Light aayi? Tell your area in one second.':
+        'लाइट गई? लाइट आई? एक सेकंड में इलाके को बताएँ।',
+    'Smart forecast': 'स्मार्ट पूर्वानुमान',
+    'Learns your area\'s loadshedding pattern and predicts the next cut.':
+        'इलाके की कटौती का पैटर्न सीखकर अगली बार बताता है।',
+    'Get warned before the cut — charge the phone, fill the water.':
+        'लाइट जाने से पहले ख़बर — फ़ोन चार्ज, पानी भर लें।',
+    'See which areas around you have light right now.':
+        'देखें आस-पास कहाँ अभी लाइट है।',
+    'Points & badges': 'पॉइंट और बैज',
+    'Climb the leaderboard and become the Mohalla Hero.':
+        'लीडरबोर्ड पर ऊपर जाएँ और मोहल्ला हीरो बनें।',
+    'UPS backup, solar planner and bill estimate.':
+        'UPS बैकअप, सोलर प्लानर और बिल का अंदाज़ा।',
     'Neon Volt': 'नियॉन वोल्ट',
     'Midnight Blue': 'मिडनाइट ब्लू',
     'Pure Black': 'पूरा काला',
@@ -1237,48 +1882,10 @@ const Map<String, Map<String, String>> kTranslations = {
     'Fri': 'शुक्र',
     'Sat': 'शनि',
     'Sun': 'रवि',
-    'First Report': 'पहली रिपोर्ट',
-    'Send your first report': 'अपनी पहली रिपोर्ट भेजें',
-    'Century': 'शतक',
-    'Send 100 reports': '100 रिपोर्ट भेजें',
-    'Pehla Khabri': 'पहला ख़बरी',
-    'Be first to report a change': 'बदलाव सबसे पहले बताएँ',
-    'News Breaker': 'ब्रेकिंग न्यूज़',
-    'Be first to report 5 times': '5 बार सबसे पहले बताएँ',
-    'Night Owl': 'रात का उल्लू',
-    'Report between midnight and 5 am': 'रात 12 से सुबह 5 के बीच रिपोर्ट करें',
-    'Detective': 'जासूस',
-    'Add details (low voltage, transformer…) 5 times':
-        '5 बार जानकारी जोड़ें (कम वोल्टेज, ट्रांसफ़ॉर्मर…)',
-    'On Fire': 'आग लगा दी',
-    'Report 3 days in a row': 'लगातार 3 दिन रिपोर्ट करें',
-    'Unstoppable': 'न रुकने वाला',
-    'Report 7 days in a row': 'लगातार 7 दिन रिपोर्ट करें',
-    'Spread the Word': 'बात फैलाएँ',
-    'Share your stats or the app': 'अपने आँकड़े या ऐप शेयर करें',
-    'Reach 3000 points': '3000 पॉइंट तक पहुँचें',
-    'UPS backup': 'UPS बैकअप',
-    'Solar planner': 'सोलर प्लानर',
-    'Bill estimate': 'बिल का अंदाज़ा',
-    'Share app': 'ऐप शेयर करें',
-    'Rate us': 'रेटिंग दें',
-    'One-tap reports': 'एक टैप रिपोर्ट',
-    'Light gayi? Light aayi? Tell your area in one second.':
-        'लाइट गई? लाइट आई? एक सेकंड में इलाके को बताएँ।',
-    'Smart forecast': 'स्मार्ट पूर्वानुमान',
-    'Learns your area\'s loadshedding pattern and predicts the next cut.':
-        'इलाके की कटौती का पैटर्न सीखकर अगली बार बताता है।',
-    'Get warned before the cut — charge the phone, fill the water.':
-        'लाइट जाने से पहले ख़बर — फ़ोन चार्ज, पानी भर लें।',
-    'See which areas around you have light right now.':
-        'देखें आस-पास कहाँ अभी लाइट है।',
-    'Points & badges': 'पॉइंट और बैज',
-    'Climb the leaderboard and become the Mohalla Hero.':
-        'लीडरबोर्ड पर ऊपर जाएँ और मोहल्ला हीरो बनें।',
-    'UPS backup, solar planner and bill estimate.':
-        'UPS बैकअप, सोलर प्लानर और बिल का अंदाज़ा।',
     'On': 'चालू',
     'Off': 'बंद',
     'Expected': 'संभावित',
+    'Pakistan (LESCO, IESCO, FESCO, MEPCO, GEPCO, PESCO, HESCO…)':
+        'पाकिस्तान (LESCO, IESCO, FESCO, MEPCO, GEPCO, PESCO, HESCO…)',
   },
 };

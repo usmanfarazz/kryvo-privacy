@@ -25,6 +25,11 @@ learns your area's pattern to warn you <b>before</b> the next cut.
 <img src="docs/screenshots/10_home_hindi_cyber.jpg" width="200">
 <img src="docs/screenshots/11_forecast_english_ocean.jpg" width="200">
 </p>
+<p align="center">
+<img src="docs/screenshots/a_home_mood.jpg" width="200">
+<img src="docs/screenshots/b_more.jpg" width="200">
+<img src="docs/screenshots/d_challenges.jpg" width="200">
+</p>
 <p align="center"><sub>Screenshots in demo mode (simulated neighbours).</sub></p>
 
 ---
@@ -41,11 +46,38 @@ learns your area's pattern to warn you <b>before</b> the next cut.
 | 🗺️ **Live map** | Nearby areas coloured green / red / grey, follow any area with one tap. |
 | 📍 **Many areas** | Home, office, parents' house… switch with one tap. The ★ main area drives alerts and the widget. |
 | 📊 **Stats** | Hours without light, number of cuts, longest/average cut, last 14 days, worst hours of the day, fun facts — and a shareable image card. |
-| 🏆 **Points, levels & badges** | 7 levels from *Newcomer* to *Bijli Legend*, 13 badges, streaks and a leaderboard (everyone / my city). |
+| 🏆 **Points, levels & badges** | 7 levels from *Newcomer* to *Bijli Legend*, 16 badges, streaks and a leaderboard (everyone / my city). |
 | 🔋 **Power tools** | UPS backup calculator (tells you if it lasts through the next cut), solar planner and bill estimator. |
 | 📱 **Home-screen widget** | Your area's status, how long, and the next cut — without opening the app. |
+| 🎯 **Andaza Lagao** | While the light is off, guess when it comes back — the closer, the more points. |
+| 🎉 **Light-back celebration** | Confetti and sound when the light returns; 4 alert sounds (chime, bell, siren, horn). |
+| 🎁 **Bijli Wrapped** | Story-style slides of your last 4 weeks, shareable as images. |
+| 🏙️ **Area ranking** | Which nearby areas are longest in the dark right now, and the most active ones. |
+| 😩 **Area mood** | One-tap emoji reactions — see how your neighbourhood feels. |
+| 🏅 **Weekly challenges** | Three new challenges every Monday with bonus points. |
+| 📞 **Complaint** | Call or SMS the electricity helpline (118 Pakistan, 1912 India, or your own) with a ready message, and keep complaint numbers. |
+| 🔋 **UPS reminders** | Backup time when the light goes, "fully charged" later. |
+| 🚰 **Water pump timer** | "Light is back — run the pump", tank-full timer, warning if the light goes. |
+| 👨‍👩‍👧 **Invite friends** | Share your area code; friends follow your area (+20 welcome points). |
+| 📌 **Status bar line** | Optional always-on notification with ON/OFF and the next cut. |
+| 🔒 **Optional App Lock** | Off by default — the app opens without a password. Turn on a PIN / fingerprint in Settings if you want. |
 | 🎨 **12 themes** | Neon Volt, Midnight Blue, Pure Black, Cyber Pink, Solar Sunset, Ocean Teal, Royal Purple, Emerald, Black Gold, Clean White, Sunrise Light, Mint Light. |
 | 🌐 **4 languages** | Roman Urdu, اردو (right-to-left), हिन्दी and English. |
+
+## ✅ How accurate is it?
+
+Bijli Kab? shows what **people in your area report**. With Firebase connected, everything is
+real: real neighbours, real reports, real times. The app never invents a status.
+
+- **Light on / off** is decided by a vote of the people who reported in the last minutes; one
+  wrong tap is out-voted, and a confidence bar shows how sure it is. With only one reporter the
+  bar says so.
+- **Forecasts** are learned from the last 4 weeks of reports (they appear after ~2 days) and are
+  shown with a percentage. If you add the official schedule from your electricity company, it is
+  used too and takes priority.
+- **Old data is not trusted:** a cut with no reports for 12 hours becomes "don't know".
+- In **demo mode** (before Firebase is set up) the neighbours are simulated — never publish like
+  that.
 
 ## 🧱 How it is built
 
@@ -77,7 +109,7 @@ city in any country from day one.
 
 ```bash
 flutter pub get
-flutter test          # 30 tests: forecast engine + every screen in all 4 languages
+flutter test          # 42 tests: forecast engine, games, App Lock + every screen in all 4 languages
 flutter run
 ```
 
@@ -106,7 +138,7 @@ home screen shows this. **Do not publish in demo mode.**
    npx firebase login
    npx firebase use <your-project-id>
    npm run deploy:rules
-   npm run test:rules    # optional: 17 rule tests in the local emulator
+   npm run test:rules    # optional: 22 rule tests in the local emulator
    ```
 6. *(Optional, needs the pay-as-you-go Blaze plan)* push alerts when the app is closed:
    `cd firebase/functions && npm install && cd .. && npm run deploy:functions`.

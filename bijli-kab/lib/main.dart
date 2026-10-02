@@ -6,6 +6,7 @@ import 'package:provider/provider.dart';
 
 import 'firebase_options.dart';
 import 'l10n/strings.dart';
+import 'screens/lock_screen.dart';
 import 'screens/onboarding_screen.dart';
 import 'screens/shell.dart';
 import 'services/demo_repository.dart';
@@ -13,6 +14,7 @@ import 'services/firebase_repository.dart';
 import 'services/repository.dart';
 import 'state/app_state.dart';
 import 'theme.dart';
+import 'widgets/home_extras.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -51,8 +53,56 @@ class BijliKabApp extends StatefulWidget {
   State<BijliKabApp> createState() => _BijliKabAppState();
 }
 
-class _BijliKabAppState extends State<BijliKabApp> {
+class _BijliKabAppState extends State<BijliKabApp> with WidgetsBindingObserver {
   String _look = '';
+  final _messenger = GlobalKey<ScaffoldMessengerState>();
+  int _seenCelebration = -1;
+  bool _celebrating = false;
+  DateTime? _pausedAt;
+
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addObserver(this);
+  }
+
+  @override
+  void dispose() {
+    WidgetsBinding.instance.removeObserver(this);
+    super.dispose();
+  }
+
+  /// App Lock: lock again after 30 s in the background.
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    if (state == AppLifecycleState.paused) {
+      _pausedAt = DateTime.now();
+    } else if (state == AppLifecycleState.resumed) {
+      final p = _pausedAt;
+      _pausedAt = null;
+      if (p != null && DateTime.now().difference(p).inSeconds >= 30) {
+        context.read<AppState>().lock();
+      }
+    }
+  }
+
+  void _afterFrame(AppState app) {
+    if (_seenCelebration < 0) _seenCelebration = app.celebrateTick;
+    if (app.celebrateTick != _seenCelebration) {
+      _seenCelebration = app.celebrateTick;
+      setState(() => _celebrating = true);
+    }
+    while (app.justCompleted.isNotEmpty) {
+      final c = app.justCompleted.removeAt(0);
+      _messenger.currentState?.showSnackBar(
+        SnackBar(
+          content: Text(
+            '${c.emoji} ${tr('Challenge complete!')} +${c.reward} ${tr('points')}',
+          ),
+        ),
+      );
+    }
+  }
 
   /// Colours and texts are read from static getters (BK, tr), and const
   /// widgets don't rebuild on their own. After a theme or language change,
@@ -74,6 +124,9 @@ class _BijliKabAppState extends State<BijliKabApp> {
       WidgetsBinding.instance.addPostFrameCallback((_) => _rebuildEverything());
     }
     _look = look;
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (mounted) _afterFrame(app);
+    });
     final locale = switch (app.lang) {
       'ur' => const Locale('ur'),
       'hi' => const Locale('hi'),
@@ -82,6 +135,7 @@ class _BijliKabAppState extends State<BijliKabApp> {
     return MaterialApp(
       title: 'Bijli Kab?',
       debugShowCheckedModeBanner: false,
+      scaffoldMessengerKey: _messenger,
       theme: BK.theme(),
       locale: locale,
       supportedLocales: const [Locale('en'), Locale('ur'), Locale('hi')],
@@ -101,7 +155,21 @@ class _BijliKabAppState extends State<BijliKabApp> {
         );
         return Directionality(
           textDirection: isRtl ? TextDirection.rtl : TextDirection.ltr,
-          child: child!,
+          child: Stack(
+            children: [
+              child!,
+              if (_celebrating)
+                Positioned.fill(
+                  child: CelebrationOverlay(
+                    onDone: () {
+                      if (mounted) setState(() => _celebrating = false);
+                    },
+                  ),
+                ),
+              if (app.ready && app.locked)
+                const Positioned.fill(child: LockScreen()),
+            ],
+          ),
         );
       },
       home: !app.ready

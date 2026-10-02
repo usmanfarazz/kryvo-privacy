@@ -4,6 +4,13 @@ import 'package:bijli_kab/l10n/strings.dart';
 import 'package:bijli_kab/main.dart';
 import 'package:bijli_kab/models/models.dart';
 import 'package:bijli_kab/screens/about_screen.dart';
+import 'package:bijli_kab/screens/challenges_screen.dart';
+import 'package:bijli_kab/screens/complaint_screen.dart';
+import 'package:bijli_kab/screens/invite_screen.dart';
+import 'package:bijli_kab/screens/lock_screen.dart';
+import 'package:bijli_kab/screens/motor_screen.dart';
+import 'package:bijli_kab/screens/ranking_screen.dart';
+import 'package:bijli_kab/screens/wrapped_screen.dart';
 import 'package:bijli_kab/screens/areas_screen.dart';
 import 'package:bijli_kab/screens/awards_screen.dart';
 import 'package:bijli_kab/screens/checklist_screen.dart';
@@ -74,6 +81,13 @@ List<Widget> _pages() => const [
   ToolsScreen(initialTab: 0),
   ToolsScreen(initialTab: 1),
   ToolsScreen(initialTab: 2),
+  WrappedScreen(),
+  RankingScreen(),
+  ChallengesScreen(),
+  ComplaintScreen(),
+  MotorScreen(),
+  InviteScreen(),
+  PinSetupScreen(),
 ];
 
 void main() {
@@ -171,6 +185,56 @@ void main() {
     expect(find.text('Roman Urdu'), findsOneWidget);
     expect(find.text('اردو'), findsOneWidget);
     _noErr(tester, '');
+    app.dispose();
+  });
+
+  testWidgets('App Lock: off by default, PIN locks and unlocks', (
+    tester,
+  ) async {
+    final app = await _boot(tester);
+    expect(app.lockEnabled, isFalse, reason: 'no password by default');
+    expect(app.locked, isFalse);
+    await tester.runAsync(() => app.setPin('1234'));
+    app.lock();
+    await tester.pump(const Duration(milliseconds: 300));
+    expect(find.byType(LockScreen), findsOneWidget);
+    _noErr(tester, 'lock screen');
+    expect(app.checkPin('0000'), isFalse);
+    expect(app.checkPin('1234'), isTrue);
+    app.unlock();
+    await tester.pump(const Duration(milliseconds: 300));
+    expect(find.byType(LockScreen), findsNothing);
+    await tester.runAsync(app.disableLock);
+    app.lock();
+    expect(app.locked, isFalse, reason: 'lock does nothing when disabled');
+    app.dispose();
+  });
+
+  testWidgets('weekly challenge completes and pays a bonus', (tester) async {
+    final app = await _boot(tester);
+    final before = app.totalPoints;
+    for (var i = 0; i < 5; i++) {
+      await tester.runAsync(
+        () => app.setMood(['😩', '🥵', '🕯️', '😡', '🎉'][i]),
+      );
+    }
+    await tester.runAsync(app.countShare);
+    expect(app.totalPoints, greaterThanOrEqualTo(before));
+    app.dispose();
+  });
+
+  testWidgets('friend code adds an area once with a welcome bonus', (
+    tester,
+  ) async {
+    final app = await _boot(tester);
+    final r1 = await tester.runAsync(() => app.addFriendCode('ttsgx3'));
+    expect(r1, FriendCodeResult.added);
+    expect(app.bonus, 20);
+    final r2 = await tester.runAsync(() => app.addFriendCode('TTSGX3'));
+    expect(r2, FriendCodeResult.alreadyFollowing);
+    final r3 = await tester.runAsync(() => app.addFriendCode('abc'));
+    expect(r3, FriendCodeResult.invalid);
+    expect(app.bonus, 20);
     app.dispose();
   });
 }

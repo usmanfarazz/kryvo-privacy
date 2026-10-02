@@ -12,6 +12,7 @@ import '../theme.dart';
 import '../widgets/area_switcher.dart';
 import '../widgets/charts.dart';
 import '../widgets/common.dart';
+import '../widgets/home_extras.dart';
 import '../widgets/power_orb.dart';
 import '../widgets/report_sheet.dart';
 import 'checklist_screen.dart';
@@ -41,7 +42,7 @@ class HomeScreen extends StatelessWidget {
                 children: [
                   const Expanded(child: AreaSwitcher()),
                   const SizedBox(width: 8),
-                  _LevelChip(points: app.points),
+                  _LevelChip(points: app.totalPoints),
                 ],
               ),
               if (!app.repo.isLive) ...[
@@ -66,6 +67,9 @@ class HomeScreen extends StatelessWidget {
                   style: TextStyle(color: BK.muted, fontSize: 12.5),
                 ),
               ),
+              const GuessResultCard(),
+              const GuessCard(),
+              const MoodRow(),
               SectionTitle('Today', trailing: _Legend()),
               GlassCard(
                 child: Column(

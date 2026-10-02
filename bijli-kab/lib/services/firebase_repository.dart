@@ -92,6 +92,35 @@ class FirebaseRepository implements PowerRepository {
   }
 
   @override
+  Stream<Map<String, int>> watchMoods(String areaId) {
+    final from = DateTime.now().subtract(const Duration(hours: 3));
+    return _db
+        .collection('areas')
+        .doc(areaId)
+        .collection('moods')
+        .where('at', isGreaterThanOrEqualTo: Timestamp.fromDate(from))
+        .snapshots()
+        .map((snap) {
+          final m = {for (final e in kMoods) e: 0};
+          for (final d in snap.docs) {
+            final e = d.data()['e'];
+            if (m.containsKey(e)) m[e as String] = m[e]! + 1;
+          }
+          return m;
+        });
+  }
+
+  @override
+  Future<void> setMood(String areaId, String emoji) =>
+      _db.collection('areas').doc(areaId).collection('moods').doc(_uid).set({
+        'e': emoji,
+        'at': FieldValue.serverTimestamp(),
+        'expire': Timestamp.fromDate(
+          DateTime.now().add(const Duration(days: 2)),
+        ),
+      });
+
+  @override
   Future<List<AreaSnapshot>> nearby(String prefix) async {
     final snap = await _db
         .collection('areas')

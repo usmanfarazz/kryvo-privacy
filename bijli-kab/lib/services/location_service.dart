@@ -74,9 +74,9 @@ class LocationService {
   }) async {
     var place = '', city = '';
     try {
-      final marks = await Geocoding(locale: const Locale('en'))
-          .placemarkFromCoordinates(lat, lng)
-          .timeout(const Duration(seconds: 8));
+      final marks = await Geocoding(
+        locale: const Locale('en'),
+      ).placemarkFromCoordinates(lat, lng).timeout(const Duration(seconds: 8));
       if (marks.isNotEmpty) {
         final m = marks.first;
         place =

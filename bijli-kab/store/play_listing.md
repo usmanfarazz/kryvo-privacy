@@ -55,13 +55,26 @@ pattern to warn you before the next cut.
 
 🏆 POINTS & BADGES
 • Earn points for every report, extra for being first
-• 7 levels from Newcomer to Bijli Legend, 13 badges, streaks
+• 7 levels from Newcomer to Bijli Legend, 16 badges, streaks
 • Leaderboard: everyone or your city
 
 🔋 POWER TOOLS
 • UPS backup calculator — will it last through the next cut?
 • Solar planner: panels, inverter and battery size
 • Electricity bill estimate
+
+🎯 FUN & GAMES
+• Andaza Lagao: guess when the light comes back and win points
+• Confetti when the light comes back — with chime, bell, siren or horn alerts
+• Bijli Wrapped: your last 4 weeks as shareable story slides
+• Weekly challenges, area ranking and area mood reactions
+
+🛠️ HANDY
+• One-tap complaint call / SMS to your electricity helpline
+• UPS "running on battery" and "fully charged" reminders
+• Water pump timer: run it when the light comes back, stop when the tank is full
+• Invite friends with your area code
+• Optional App Lock (off by default — no password needed)
 
 📱 HOME-SCREEN WIDGET
 See your area's status without opening the app.

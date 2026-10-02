@@ -16,22 +16,51 @@ class NotificationService {
   static final _plugin = FlutterLocalNotificationsPlugin();
   static bool _ready = false;
 
-  static const _predictChannel = AndroidNotificationDetails(
+  /// Alert sound: 'default' or one of [kAlertSounds] (`res/raw/bk_<name>.wav`).
+  /// Android fixes a channel's sound when it is created, so each sound has
+  /// its own channel.
+  static String sound = 'default';
+
+  static AndroidNotificationDetails _alert(
+    String id,
+    String name,
+    String description,
+  ) {
+    final custom = sound != 'default';
+    return AndroidNotificationDetails(
+      custom ? '${id}_$sound' : id,
+      custom ? '$name ($sound)' : name,
+      channelDescription: description,
+      importance: Importance.high,
+      priority: Priority.high,
+      icon: 'ic_stat_bolt',
+      color: const Color(0xFFFFD60A),
+      sound: custom ? RawResourceAndroidNotificationSound('bk_$sound') : null,
+    );
+  }
+
+  static AndroidNotificationDetails _predict() => _alert(
     'bk_predict',
     'Outage warnings',
-    channelDescription: 'Heads-up before a predicted power cut',
-    importance: Importance.high,
-    priority: Priority.high,
-    icon: 'ic_stat_bolt',
-    color: Color(0xFFFFD60A),
+    'Heads-up before a predicted power cut',
   );
 
-  static const _liveChannel = AndroidNotificationDetails(
+  static AndroidNotificationDetails _live() => _alert(
     'bk_live',
     'Light gone / back',
-    channelDescription: 'When neighbours report the power changed',
-    importance: Importance.high,
-    priority: Priority.high,
+    'When neighbours report the power changed',
+  );
+
+  static const _statusChannel = AndroidNotificationDetails(
+    'bk_status',
+    'Status in the notification bar',
+    channelDescription: 'Always-on line showing your area\'s power status',
+    importance: Importance.low,
+    priority: Priority.low,
+    ongoing: true,
+    autoCancel: false,
+    onlyAlertOnce: true,
+    showWhen: false,
     icon: 'ic_stat_bolt',
     color: Color(0xFFFFD60A),
   );
@@ -88,9 +117,7 @@ class NotificationService {
       await _plugin.zonedSchedule(
         id: id++,
         scheduledDate: tz.TZDateTime.from(at, tz.local),
-        notificationDetails: const NotificationDetails(
-          android: _predictChannel,
-        ),
+        notificationDetails: NotificationDetails(android: _predict()),
         androidScheduleMode: AndroidScheduleMode.inexactAllowWhileIdle,
         title: trf('⚡ Light may go in {0} min', [leadMinutes]),
         body: trf('{0}: expected {1} – {2}. Charge your phone & fill water!', [
@@ -117,7 +144,7 @@ class NotificationService {
       body: state == PowerState.off
           ? tr('Neighbours just reported a power cut.')
           : tr('Neighbours just reported the power is back.'),
-      notificationDetails: const NotificationDetails(android: _liveChannel),
+      notificationDetails: NotificationDetails(android: _live()),
     );
   }
 
@@ -139,6 +166,116 @@ class NotificationService {
       androidScheduleMode: AndroidScheduleMode.inexactAllowWhileIdle,
       title: tr('📝 Before the light goes'),
       body: items.take(4).join(' • '),
+    );
+  }
+
+  // ------------------------------------------------------- extras
+
+  static String _statusSig = '';
+
+  /// ID 700: always-on status line in the notification bar.
+  static Future<void> showStatus(String title, String body) async {
+    if (!_ready) return;
+    final sig = '$title|$body';
+    if (sig == _statusSig) return;
+    _statusSig = sig;
+    await _plugin.show(
+      id: 700,
+      title: title,
+      body: body,
+      notificationDetails: const NotificationDetails(android: _statusChannel),
+    );
+  }
+
+  static Future<void> hideStatus() async {
+    _statusSig = '';
+    if (_ready) await _plugin.cancel(id: 700);
+  }
+
+  /// ID 500: "UPS should be full" some hours after the light came back.
+  static Future<void> scheduleUpsFull(int hours) async {
+    if (!_ready) return;
+    await _plugin.cancel(id: 500);
+    await _plugin.zonedSchedule(
+      id: 500,
+      scheduledDate: tz.TZDateTime.from(
+        DateTime.now().add(Duration(hours: hours)),
+        tz.local,
+      ),
+      notificationDetails: const NotificationDetails(android: _reminderChannel),
+      androidScheduleMode: AndroidScheduleMode.inexactAllowWhileIdle,
+      title: tr('🔋 UPS should be fully charged'),
+      body: tr('The light has been on long enough to charge your UPS.'),
+    );
+  }
+
+  static Future<void> cancelUpsFull() async {
+    if (_ready) await _plugin.cancel(id: 500);
+  }
+
+  /// ID 501: right when the light goes — how long the UPS will last.
+  static Future<void> showUpsBackup(String backup) async {
+    if (!_ready) return;
+    await _plugin.show(
+      id: 501,
+      title: tr('🔋 Running on UPS'),
+      body: trf('Your UPS should last about {0} with your usual load.', [
+        backup,
+      ]),
+      notificationDetails: const NotificationDetails(android: _reminderChannel),
+    );
+  }
+
+  /// ID 600: "light is back — run the water pump".
+  static Future<void> showMotorNow(String areaName) async {
+    if (!_ready) return;
+    await _plugin.show(
+      id: 600,
+      title: tr('🚰 Light is back — run the water pump'),
+      body: trf('{0}: fill the tank while there is power.', [areaName]),
+      notificationDetails: const NotificationDetails(android: _reminderChannel),
+    );
+  }
+
+  /// ID 601: tank-full timer.
+  static Future<void> scheduleMotorDone(DateTime at) async {
+    if (!_ready) return;
+    await _plugin.cancel(id: 601);
+    await _plugin.zonedSchedule(
+      id: 601,
+      scheduledDate: tz.TZDateTime.from(at, tz.local),
+      notificationDetails: NotificationDetails(android: _live()),
+      androidScheduleMode: AndroidScheduleMode.inexactAllowWhileIdle,
+      title: tr('🚰 Tank should be full'),
+      body: tr('Switch off the water pump.'),
+    );
+  }
+
+  static Future<void> cancelMotorDone() async {
+    if (_ready) await _plugin.cancel(id: 601);
+  }
+
+  /// ID 602: the light went while the pump timer was running.
+  static Future<void> showMotorStopped() async {
+    if (!_ready) return;
+    await _plugin.show(
+      id: 602,
+      title: tr('🚰 Light gone — pump stopped'),
+      body: tr(
+        'The tank timer was cancelled. Start it again when the light is back.',
+      ),
+      notificationDetails: const NotificationDetails(android: _reminderChannel),
+    );
+  }
+
+  /// Plays the chosen alert sound once.
+  static Future<void> test() async {
+    if (!_ready) return;
+    await _plugin.show(
+      id: 800,
+      title: tr('💡✅ Light is back!'),
+      body: tr('This is how alerts will sound.'),
+      notificationDetails: NotificationDetails(android: _live()),
     );
   }
 

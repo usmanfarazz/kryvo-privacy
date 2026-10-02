@@ -17,6 +17,7 @@ class DemoRepository implements PowerRepository {
   String get uid => 'me';
 
   final _mine = <String, List<PowerReport>>{};
+  final _myMood = <String, String>{};
   final _changes = StreamController<String>.broadcast();
   String _name = 'You', _avatar = '😎', _city = '';
   int _points = 0, _reports = 0;
@@ -155,6 +156,39 @@ class DemoRepository implements PowerRepository {
     _points += points;
     _reports++;
     _changes.add(area.id);
+  }
+
+  Map<String, int> _moods(String areaId) {
+    final now = DateTime.now();
+    final rnd = Random(
+      areaId.hashCode ^ (now.millisecondsSinceEpoch ~/ 10800000),
+    );
+    final m = {for (final e in kMoods) e: rnd.nextInt(18)};
+    final mine = _myMood[areaId];
+    if (mine != null) m[mine] = m[mine]! + 1;
+    return m;
+  }
+
+  @override
+  Stream<Map<String, int>> watchMoods(String areaId) {
+    late StreamController<Map<String, int>> c;
+    StreamSubscription<String>? sub;
+    c = StreamController<Map<String, int>>(
+      onListen: () {
+        c.add(_moods(areaId));
+        sub = _changes.stream
+            .where((id) => id == 'mood:$areaId')
+            .listen((_) => c.add(_moods(areaId)));
+      },
+      onCancel: () => sub?.cancel(),
+    );
+    return c.stream;
+  }
+
+  @override
+  Future<void> setMood(String areaId, String emoji) async {
+    _myMood[areaId] = emoji;
+    _changes.add('mood:$areaId');
   }
 
   @override

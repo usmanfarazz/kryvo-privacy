@@ -45,7 +45,13 @@ class PlayerStats {
   final int streak;
   final int areas;
   final int shares;
+  final int guessWins;
+  final int challenges;
+  final int invites;
   const PlayerStats({
+    this.guessWins = 0,
+    this.challenges = 0,
+    this.invites = 0,
     this.points = 0,
     this.reports = 0,
     this.firsts = 0,
@@ -132,6 +138,27 @@ final kAwards = <Award>[
     'Spread the Word',
     'Share your stats or the app',
     (s) => s.shares >= 1,
+  ),
+  Award(
+    'sniper',
+    '🎯',
+    'Sharp Shooter',
+    'Win 3 guess games',
+    (s) => s.guessWins >= 3,
+  ),
+  Award(
+    'champion',
+    '🏆',
+    'Challenge Champion',
+    'Complete 5 weekly challenges',
+    (s) => s.challenges >= 5,
+  ),
+  Award(
+    'friends',
+    '🤝',
+    'Yaaron ka Yaar',
+    'Invite friends 3 times',
+    (s) => s.invites >= 3,
   ),
   Award(
     'legend',

@@ -17,6 +17,12 @@ import 'profile_sheet.dart';
 import 'settings_screen.dart';
 import 'theme_screen.dart';
 import 'tools_screen.dart';
+import 'challenges_screen.dart';
+import 'complaint_screen.dart';
+import 'invite_screen.dart';
+import 'motor_screen.dart';
+import 'ranking_screen.dart';
+import 'wrapped_screen.dart';
 
 class MoreScreen extends StatelessWidget {
   const MoreScreen({super.key});
@@ -28,6 +34,27 @@ class MoreScreen extends StatelessWidget {
         Navigator.push(context, MaterialPageRoute(builder: (_) => w));
 
     final features = <(String, String, Color, Widget?, VoidCallback?)>[
+      (
+        '🎁',
+        'Bijli Wrapped',
+        const Color(0xFFDB2777),
+        const WrappedScreen(),
+        null,
+      ),
+      (
+        '🏅',
+        'Challenges',
+        const Color(0xFFF59E0B),
+        const ChallengesScreen(),
+        null,
+      ),
+      (
+        '🏙️',
+        'Area ranking',
+        const Color(0xFF6366F1),
+        const RankingScreen(),
+        null,
+      ),
       ('🏆', 'Leaderboard', BK.accent, const LeaderboardScreen(), null),
       ('🎖️', 'Badges', const Color(0xFFF59E0B), const AwardsScreen(), null),
       (
@@ -56,6 +83,21 @@ class MoreScreen extends StatelessWidget {
         'Checklist',
         const Color(0xFFA855F7),
         const ChecklistScreen(),
+        null,
+      ),
+      ('🚰', 'Pump timer', const Color(0xFF0EA5E9), const MotorScreen(), null),
+      (
+        '📞',
+        'Complaint',
+        const Color(0xFFEF4444),
+        const ComplaintScreen(),
+        null,
+      ),
+      (
+        '👨‍👩‍👧',
+        'Invite friends',
+        const Color(0xFF22C55E),
+        const InviteScreen(),
         null,
       ),
       ('📍', 'My areas', const Color(0xFFEF4444), const AreasScreen(), null),
@@ -166,11 +208,11 @@ class _ProfileCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final app = context.watch<AppState>();
-    final lv = levelFor(app.points);
-    final nx = nextLevel(app.points);
+    final lv = levelFor(app.totalPoints);
+    final nx = nextLevel(app.totalPoints);
     final progress = nx == null
         ? 1.0
-        : (app.points - lv.minPoints) / (nx.minPoints - lv.minPoints);
+        : (app.totalPoints - lv.minPoints) / (nx.minPoints - lv.minPoints);
     return GlassCard(
       gradient: LinearGradient(
         colors: [
@@ -238,7 +280,7 @@ class _ProfileCard extends StatelessWidget {
           Row(
             children: [
               Text(
-                trf('{0} points', [app.points]),
+                trf('{0} points', [app.totalPoints]),
                 style: TextStyle(
                   color: BK.txt,
                   fontWeight: FontWeight.w800,
@@ -251,7 +293,7 @@ class _ProfileCard extends StatelessWidget {
                   nx == null
                       ? tr('Max level!')
                       : trf('{0} more to {1}', [
-                          nx.minPoints - app.points,
+                          nx.minPoints - app.totalPoints,
                           tr(nx.title),
                         ]),
                   textAlign: TextAlign.end,

@@ -55,6 +55,11 @@ class SavedArea {
   );
 }
 
+/// Area mood reactions.
+const kAlertSounds = ['chime', 'bell', 'siren', 'horn'];
+
+const kMoods = ['😩', '🥵', '🕯️', '😡', '🎉'];
+
 /// Optional detail a reporter can attach.
 enum PowerIssue {
   none,

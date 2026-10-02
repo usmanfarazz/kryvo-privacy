@@ -5,30 +5,10 @@ import 'package:provider/provider.dart';
 
 import '../l10n/format.dart';
 import '../l10n/strings.dart';
+import '../services/power_math.dart';
 import '../state/app_state.dart';
 import '../theme.dart';
 import '../widgets/common.dart';
-
-class Appliance {
-  final String id, name, emoji;
-  final int watts;
-  const Appliance(this.id, this.name, this.emoji, this.watts);
-}
-
-const kAppliances = [
-  Appliance('fan', 'Ceiling fan', '🌀', 75),
-  Appliance('led', 'LED bulb', '💡', 12),
-  Appliance('tube', 'Tube light', '🔦', 20),
-  Appliance('router', 'WiFi router', '📶', 12),
-  Appliance('phone', 'Phone charger', '📱', 10),
-  Appliance('laptop', 'Laptop', '💻', 65),
-  Appliance('tv', 'LED TV', '📺', 80),
-  Appliance('fridge', 'Fridge', '🧊', 150),
-  Appliance('pc', 'Desktop PC', '🖥️', 200),
-  Appliance('motor', 'Water pump', '🚰', 750),
-  Appliance('iron', 'Iron', '👔', 1000),
-  Appliance('ac', 'Inverter AC (1 ton)', '❄️', 1100),
-];
 
 /// UPS backup · Solar planner · Bill estimate.
 class ToolsScreen extends StatefulWidget {
@@ -158,8 +138,7 @@ class _Stepper extends StatelessWidget {
   );
 }
 
-int _watts(Map<String, int> counts) =>
-    kAppliances.fold(0, (s, a) => s + a.watts * (counts[a.id] ?? 0));
+int _watts(Map<String, int> counts) => loadWatts(counts);
 
 Map<String, int> _readCounts(AppState app, String key, Map<String, int> def) {
   final raw = app.toolPrefs[key];
@@ -200,10 +179,13 @@ class _UpsToolState extends State<_UpsTool> {
   @override
   Widget build(BuildContext context) {
     final watts = _watts(_counts);
-    // Usable energy: capacity × voltage × depth of discharge × health × inverter.
-    final dod = _lithium ? 0.9 : 0.5;
-    final wh = _ah * _volts * dod * _health * 0.85;
-    final hours = watts == 0 ? 0.0 : wh / watts;
+    final hours = upsBackupHours(
+      ah: _ah,
+      volts: _volts,
+      lithium: _lithium,
+      health: _health,
+      watts: watts,
+    );
     final live = context.watch<AppState>().activeLive;
     final cut =
         live?.next?.duration ??

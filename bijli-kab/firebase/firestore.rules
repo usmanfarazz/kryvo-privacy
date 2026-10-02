@@ -59,6 +59,20 @@ service cloud.firestore {
                  ['lowVoltage', 'tripping', 'transformer', 'scheduled', 'wireFault']);
         allow update, delete: if false;
       }
+
+      // Area mood: one emoji per person, replaced on each tap.
+      match /moods/{uid} {
+        allow read: if true;
+        allow create, update: if signedIn()
+          && isGeohash6(areaId)
+          && request.auth.uid == uid
+          && request.resource.data.keys().hasOnly(['e', 'at', 'expire'])
+          && request.resource.data.e in ['😩', '🥵', '🕯️', '😡', '🎉']
+          && request.resource.data.at == request.time
+          && request.resource.data.expire is timestamp
+          && (resource == null || request.time > resource.data.at + duration.value(5, 's'));
+        allow delete: if false;
+      }
     }
 
     match /users/{uid} {

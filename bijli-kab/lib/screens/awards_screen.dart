@@ -84,7 +84,9 @@ class AwardsScreen extends StatelessWidget {
                       child: Text(
                         '${trf('Level {0}', [l.number])} · ${tr(l.title)}',
                         style: TextStyle(
-                          color: app.points >= l.minPoints ? BK.txt : BK.muted,
+                          color: app.totalPoints >= l.minPoints
+                              ? BK.txt
+                              : BK.muted,
                           fontWeight: FontWeight.w800,
                         ),
                       ),

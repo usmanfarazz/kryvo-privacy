@@ -27,6 +27,12 @@ abstract class PowerRepository {
 
   Future<List<LeaderEntry>> leaderboard({String? city});
 
+  /// How the area feels right now: emoji → number of people (last 3 hours).
+  Stream<Map<String, int>> watchMoods(String areaId);
+
+  /// One mood per person per area; a new tap replaces the old one.
+  Future<void> setMood(String areaId, String emoji);
+
   Future<void> saveProfile({
     required String name,
     required String avatar,

@@ -21,7 +21,7 @@ mode). If a feature changes, these answers must change too.
 |---|---|---|---|---|
 | Location → **Approximate location** | Yes (the ~1 km area code of a report and the area's centre) | No | Required to report | App functionality |
 | Personal info → **Name** | Yes (the nickname you choose; can be anything) | No | Optional | App functionality (leaderboard) |
-| App activity → **Other user-generated content** | Yes (light gone / back reports with optional detail) | No | Required to report | App functionality |
+| App activity → **Other user-generated content** | Yes (light gone / back reports with optional detail, and an area mood emoji) | No | Required to report | App functionality |
 | App info & performance | No | — | — | — |
 | Device or other IDs → **User IDs** | Yes (random anonymous Firebase ID) | No | Required | App functionality, fraud prevention (rate limiting) |
 
@@ -73,6 +73,7 @@ children.
 | `POST_NOTIFICATIONS` | Outage warnings and "light is back" alerts. |
 | `RECEIVE_BOOT_COMPLETED` | Re-arm scheduled outage warnings after a restart. |
 | `INTERNET` | Reports, live map, leaderboard. |
+| `USE_BIOMETRIC` | Optional App Lock with fingerprint (off by default). |
 
 No background location, no exact-alarm permission.
 

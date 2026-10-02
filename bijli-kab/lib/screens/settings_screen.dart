@@ -8,6 +8,8 @@ import '../theme.dart';
 import '../widgets/common.dart';
 import 'about_screen.dart';
 import 'areas_screen.dart';
+import 'lock_screen.dart';
+import '../models/models.dart';
 import 'profile_sheet.dart';
 import 'theme_screen.dart';
 
@@ -81,6 +83,108 @@ class SettingsScreen extends StatelessWidget {
                   value: app.quietHours,
                   onChanged: (v) => app.setAlerts(quiet: v),
                 ),
+                BTile(
+                  icon: Icons.music_note_rounded,
+                  title: 'Alert sound',
+                  subtitle: _soundName(app.alertSound),
+                  onTap: () => _pickSound(context),
+                ),
+              ],
+            ),
+          ),
+          const SectionTitle('Extras'),
+          GlassCard(
+            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+            child: Column(
+              children: [
+                _Switch(
+                  icon: Icons.celebration_rounded,
+                  title: 'Celebrate when light comes back',
+                  subtitle: tr('Confetti and a sound in the app'),
+                  value: app.celebrateOn,
+                  onChanged: (v) => app.setExtras(celebrate: v),
+                ),
+                _Switch(
+                  icon: Icons.push_pin_rounded,
+                  title: 'Status in notification bar',
+                  subtitle: tr('Always see light ON/OFF and the next cut'),
+                  value: app.statusBar,
+                  onChanged: (v) async {
+                    if (v) await NotificationService.requestPermission();
+                    app.setExtras(statusLine: v);
+                  },
+                ),
+                _Switch(
+                  icon: Icons.battery_charging_full_rounded,
+                  title: 'UPS reminders',
+                  subtitle: tr(
+                    'Backup time when the light goes, "fully charged" later',
+                  ),
+                  value: app.upsReminder,
+                  onChanged: (v) => app.setExtras(ups: v),
+                ),
+                if (app.upsReminder)
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(54, 0, 0, 10),
+                    child: Wrap(
+                      spacing: 6,
+                      runSpacing: 6,
+                      children: [
+                        for (final h in [4, 6, 8, 10])
+                          ChoiceChip(
+                            label: Text(trf('Full in {0}h', [h])),
+                            selected: app.upsChargeHours == h,
+                            onSelected: (_) => app.setExtras(upsHours: h),
+                          ),
+                      ],
+                    ),
+                  ),
+                _Switch(
+                  icon: Icons.water_drop_rounded,
+                  title: 'Water pump reminder',
+                  subtitle: tr('When the light comes back'),
+                  value: app.motorReminder,
+                  onChanged: (v) => app.setExtras(motor: v),
+                ),
+              ],
+            ),
+          ),
+          const SectionTitle('Security'),
+          GlassCard(
+            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+            child: Column(
+              children: [
+                _Switch(
+                  icon: Icons.lock_rounded,
+                  title: 'App Lock',
+                  subtitle: app.lockEnabled
+                      ? tr('PIN needed to open the app')
+                      : tr('Off — the app opens without a password'),
+                  value: app.lockEnabled,
+                  onChanged: (v) {
+                    if (v) {
+                      open(const PinSetupScreen());
+                    } else {
+                      app.disableLock();
+                    }
+                  },
+                ),
+                if (app.lockEnabled) ...[
+                  _Switch(
+                    icon: Icons.fingerprint_rounded,
+                    title: 'Fingerprint / face unlock',
+                    subtitle: tr(
+                      'Use the phone\'s fingerprint instead of the PIN',
+                    ),
+                    value: app.lockBiometric,
+                    onChanged: app.setLockBiometric,
+                  ),
+                  BTile(
+                    icon: Icons.password_rounded,
+                    title: 'Change PIN',
+                    onTap: () => open(const PinSetupScreen()),
+                  ),
+                ],
               ],
             ),
           ),
@@ -173,6 +277,62 @@ class SettingsScreen extends StatelessWidget {
       ),
     );
   }
+
+  static String _soundName(String s) => switch (s) {
+    'chime' => '🎶 ${tr('Chime')}',
+    'bell' => '🔔 ${tr('Bell')}',
+    'siren' => '🚨 ${tr('Siren')}',
+    'horn' => '📯 ${tr('Horn')}',
+    _ => '📱 ${tr('Phone default')}',
+  };
+
+  Future<void> _pickSound(BuildContext context) => showModalBottomSheet(
+    context: context,
+    builder: (ctx) {
+      final app = ctx.watch<AppState>();
+      return SafeArea(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            const SizedBox(height: 16),
+            Text(
+              tr('Alert sound'),
+              style: TextStyle(
+                color: BK.txt,
+                fontSize: 20,
+                fontWeight: FontWeight.w900,
+              ),
+            ),
+            const SizedBox(height: 8),
+            for (final s in ['default', ...kAlertSounds])
+              ListTile(
+                title: Text(
+                  _soundName(s),
+                  style: TextStyle(color: BK.txt, fontWeight: FontWeight.w800),
+                ),
+                trailing: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    if (app.alertSound == s)
+                      Icon(Icons.check_circle_rounded, color: BK.accent),
+                    IconButton(
+                      icon: Icon(Icons.play_circle_rounded, color: BK.muted),
+                      onPressed: () async {
+                        await app.setExtras(sound: s);
+                        await NotificationService.requestPermission();
+                        await NotificationService.test();
+                      },
+                    ),
+                  ],
+                ),
+                onTap: () => app.setExtras(sound: s),
+              ),
+            const SizedBox(height: 8),
+          ],
+        ),
+      );
+    },
+  );
 
   Future<void> _pickLanguage(BuildContext context) => showModalBottomSheet(
     context: context,

@@ -91,6 +91,15 @@ await t('everyone can read areas, reports and leaderboard', async () => {
   await assertSucceeds(getDoc(doc(anon(), 'users', 'alice')));
 });
 
+const mood = (db, uid, e = '😩') => setDoc(doc(db, 'areas', AREA, 'moods', uid), {
+  e, at: serverTimestamp(), expire: expire(),
+});
+await t('own mood can be set', () => assertSucceeds(mood(alice(), 'alice')));
+await t("cannot set someone else's mood", () => assertFails(mood(alice(), 'bob')));
+await t('unknown mood emoji is refused', () => assertFails(mood(alice(), 'alice', '💩')));
+await t('signed-out users cannot set a mood', () => assertFails(mood(anon(), 'x')));
+await t('moods are public', () => assertSucceeds(getDoc(doc(anon(), 'areas', AREA, 'moods', 'alice'))));
+
 await env.cleanup();
 for (const r of results) console.log(r.join(' — '));
 const failed = results.filter((r) => r[0] !== 'ok');
