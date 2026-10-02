@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bijli Kab? — Privacy Policy</title>
+<style>
+  :root { --bg:#0a0b10; --panel:#15161f; --txt:#f4f4f8; --muted:#9a9bb0; --accent:#ffd60a; }
+  @media (prefers-color-scheme: light) {
+    :root { --bg:#f4f6fb; --panel:#fff; --txt:#1a2230; --muted:#66748c; --accent:#b38600; }
+  }
+  body { margin:0; background:var(--bg); color:var(--txt); font:16px/1.6 system-ui, sans-serif; }
+  main { max-width:760px; margin:0 auto; padding:32px 16px 64px; }
+  h1 { font-size:28px; margin:0 0 4px; }
+  h1 span { color:var(--accent); }
+  h2 { font-size:19px; margin:28px 0 8px; }
+  .muted { color:var(--muted); }
+  .card { background:var(--panel); border-radius:16px; padding:16px 18px; }
+  table { width:100%; border-collapse:collapse; }
+  td, th { text-align:left; padding:8px 6px; border-bottom:1px solid rgba(127,127,127,.25); vertical-align:top; }
+  a { color:var(--accent); }
+</style>
+</head>
+<body>
+<main>
+<h1><span>⚡</span> Bijli Kab? — Privacy Policy</h1>
+<p class="muted">Last updated: 2 October 2026 · Developer: Faraz Labs · Contact:
+<a href="mailto:usmanfaraz1818@gmail.com">usmanfaraz1818@gmail.com</a></p>
+
+<div class="card">
+<p><b>In short:</b> no phone number, e-mail or real name is needed. Your exact location never
+leaves your phone. When you report that the light went or came back, we store that report with
+the code of your ~1 km area and a random anonymous ID, so your neighbours can see the status.</p>
+</div>
+
+<h2>What we collect</h2>
+<table>
+<tr><th>Data</th><th>Why</th><th>Kept for</th></tr>
+<tr><td>Power reports: light gone / back, optional detail (e.g. low voltage), time</td><td>Show live status and forecasts for your area</td><td>35 days, then deleted automatically</td></tr>
+<tr><td>Area code (a ~1 km geohash cell), its centre point, locality and city name</td><td>Group reports from the same neighbourhood and show them on the map</td><td>While the area has reports</td></tr>
+<tr><td>Random anonymous user ID (Firebase Anonymous Authentication)</td><td>Count one vote per person, prevent spam (one report every 2 minutes)</td><td>Until you ask us to delete it</td></tr>
+<tr><td>Nickname, avatar emoji, city, points and number of reports</td><td>Public leaderboard. The nickname can be anything you like.</td><td>Until you ask us to delete it</td></tr>
+</table>
+
+<h2>What stays on your phone</h2>
+<p>Your precise GPS position (used only to find your area), the areas you follow and their names,
+your settings, checklist, schedule, and calculator inputs. Uninstalling the app or
+<i>Settings → Reset app</i> deletes them.</p>
+
+<h2>What we don't do</h2>
+<p>No ads, no advertising IDs, no analytics or tracking SDKs, no selling or sharing of data. We do
+not show other users who sent a report.</p>
+
+<h2>Services we use</h2>
+<p><b>Google Firebase</b> (Authentication, Cloud Firestore and, if enabled, Cloud Messaging for
+push alerts) stores the data above on Google's servers; see
+<a href="https://firebase.google.com/support/privacy">Firebase privacy</a>.
+<b>OpenStreetMap</b> map tiles are downloaded when you open the map; see the
+<a href="https://wiki.osmfoundation.org/wiki/Privacy_Policy">OSMF privacy policy</a>.
+Your phone's built-in geocoder turns a location into a place name.</p>
+
+<h2>Permissions</h2>
+<p><b>Location</b> — only while you choose an area, in the foreground. <b>Notifications</b> —
+outage warnings and "light is back" alerts. <b>Run at startup</b> — to restore scheduled
+warnings after a restart. <b>Internet</b> — to send and receive reports.</p>
+
+<h2>Your choices</h2>
+<p>You can use any nickname, turn off any alert, and reset the app at any time. To delete your
+leaderboard profile and reports linked to your anonymous ID, e-mail us from the app
+(<i>More → How it works → Send feedback</i>); we will do it within 30 days.</p>
+
+<h2>Children</h2>
+<p>Bijli Kab? is a general utility and is not directed at children under 13.</p>
+
+<h2>Forecasts</h2>
+<p>Forecasts are estimates made from community reports. They are not official information from
+any electricity company.</p>
+
+<h2>Changes</h2>
+<p>If this policy changes, we will update this page and the date above.</p>
+</main>
+</body>
+</html>

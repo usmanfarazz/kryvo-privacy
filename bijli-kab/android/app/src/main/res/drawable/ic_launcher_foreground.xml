@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Adaptive icon foreground: glowing bolt (108dp canvas, 72dp safe zone). -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <group
+        android:pivotX="12"
+        android:pivotY="12"
+        android:scaleX="0.5"
+        android:scaleY="0.5">
+        <path android:pathData="M13.5,2L4.5,13.5H11L10,22L19.5,10H13L13.5,2Z">
+            <aapt:attr name="android:fillColor">
+                <gradient
+                    android:startX="12"
+                    android:startY="2"
+                    android:endX="12"
+                    android:endY="22"
+                    android:type="linear">
+                    <item android:offset="0" android:color="#FFFFEC5A" />
+                    <item android:offset="1" android:color="#FFFF8A00" />
+                </gradient>
+            </aapt:attr>
+        </path>
+    </group>
+</vector>

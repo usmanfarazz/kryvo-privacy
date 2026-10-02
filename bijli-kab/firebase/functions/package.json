@@ -1,0 +1,11 @@
+{
+  "name": "bijli-kab-functions",
+  "description": "Optional: push 'light gone / back' to everyone following an area.",
+  "private": true,
+  "main": "index.js",
+  "engines": { "node": "22" },
+  "dependencies": {
+    "firebase-admin": "^13.0.0",
+    "firebase-functions": "^6.0.0"
+  }
+}

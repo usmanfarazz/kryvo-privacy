@@ -1,0 +1,98 @@
+rules_version = '2';
+
+// Bijli Kab? — Cloud Firestore security rules.
+//
+//   areas/{geohash}                 latest state per ~1 km area (public)
+//   areas/{geohash}/reports/{id}    every "light gayi / aayi" tap (public, append-only)
+//   users/{uid}                     nickname, avatar, points (public leaderboard)
+//
+// Every report is written in one batch with an update of users/{uid}.lastReport,
+// which allows one report per person every 2 minutes and caps the points.
+service cloud.firestore {
+  match /databases/{db}/documents {
+
+    function signedIn() {
+      return request.auth != null;
+    }
+
+    function isGeohash6(id) {
+      return id.matches('^[0-9b-hjkmnp-z]{6}$');
+    }
+
+    function userPath() {
+      return /databases/$(db)/documents/users/$(request.auth.uid);
+    }
+
+    // The user doc as it will be after this batch carries this request's time.
+    function reportedNow() {
+      return getAfter(userPath()).data.lastReport == request.time;
+    }
+
+    match /areas/{areaId} {
+      allow read: if true;
+      allow create, update: if signedIn()
+        && isGeohash6(areaId)
+        && reportedNow()
+        && request.resource.data.keys().hasOnly(
+             ['place', 'city', 'lat', 'lng', 'p4', 'state', 'since', 'updated', 'n'])
+        && request.resource.data.state in ['on', 'off']
+        && request.resource.data.p4 == areaId[0:4]
+        && request.resource.data.updated == request.time
+        && request.resource.data.place is string && request.resource.data.place.size() <= 80
+        && request.resource.data.city is string && request.resource.data.city.size() <= 60
+        && request.resource.data.lat is number && request.resource.data.lng is number
+        && request.resource.data.n is int;
+      allow delete: if false;
+
+      match /reports/{reportId} {
+        allow read: if true;
+        allow create: if signedIn()
+          && isGeohash6(areaId)
+          && reportedNow()
+          && request.resource.data.keys().hasOnly(['uid', 'on', 'issue', 'at', 'expire'])
+          && request.resource.data.uid == request.auth.uid
+          && request.resource.data.on is bool
+          && request.resource.data.at == request.time
+          && request.resource.data.expire is timestamp
+          && (request.resource.data.issue == null
+              || request.resource.data.issue in
+                 ['lowVoltage', 'tripping', 'transformer', 'scheduled', 'wireFault']);
+        allow update, delete: if false;
+      }
+    }
+
+    match /users/{uid} {
+      allow read: if true;
+      allow create, update: if signedIn()
+        && request.auth.uid == uid
+        && request.resource.data.keys().hasOnly(
+             ['name', 'avatar', 'city', 'points', 'reports', 'lastReport'])
+        && (!('name' in request.resource.data)
+            || (request.resource.data.name is string && request.resource.data.name.size() <= 20))
+        && (!('avatar' in request.resource.data)
+            || (request.resource.data.avatar is string && request.resource.data.avatar.size() <= 16))
+        && (!('city' in request.resource.data)
+            || (request.resource.data.city is string && request.resource.data.city.size() <= 60))
+        && scoreOk();
+    }
+
+    // Points/reports only grow together with a fresh report, at most 40 points
+    // per report, and at most one report every 2 minutes.
+    function scoreOk() {
+      let before = resource == null ? {} : resource.data;
+      let after = request.resource.data;
+      let p0 = before.get('points', 0);
+      let p1 = after.get('points', p0);
+      let r0 = before.get('reports', 0);
+      let r1 = after.get('reports', r0);
+      let last0 = before.get('lastReport', null);
+      let last1 = after.get('lastReport', last0);
+      let unchanged = p1 == p0 && r1 == r0 && last1 == last0;
+      let oneReport = last1 == request.time
+        && (last0 == null || request.time > last0 + duration.value(2, 'm'))
+        && r1 == r0 + 1
+        && p1 >= p0 && p1 - p0 <= 40;
+      return unchanged || oneReport;
+    }
+  }
+}

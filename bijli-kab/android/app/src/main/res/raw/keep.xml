@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Resources looked up by name from Dart/plugins: keep them in release builds. -->
+<resources xmlns:tools="http://schemas.android.com/tools"
+    tools:keep="@drawable/ic_stat_bolt,@drawable/widget_*,@layout/bijli_widget,@xml/bijli_widget_info,@drawable/splash_bolt" />
